@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import ContactUs from 'sections/contact-us'
 
 const ContactUs = (props) => {
-	const { width } = props
-	return <ContactUs />
+	return <ContactUs props = {props} />
 }
 
 export default ContactUs
