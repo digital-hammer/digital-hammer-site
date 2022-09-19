@@ -20,9 +20,11 @@ function MyApp({ Component, pageProps }) {
         <title>The Digital Hammer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header width={width} />
-      <Component {...pageProps} width={width} />
-      <Footer />
+        <Header width={width} />
+        <div id="page-wrapper">
+          <Component {...pageProps} width={width} />
+        </div>
+        <Footer />
     </>
   )
 }
