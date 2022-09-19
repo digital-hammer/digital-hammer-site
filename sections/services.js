@@ -1,4 +1,4 @@
-export default () => {
+export default (props) => {
   return (
     <section id="one" className="features">
       <header className="major">

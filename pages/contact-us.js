@@ -7,15 +7,16 @@ const ContactUs = (props) => {
 				<ul className="contact">
 					<li className="icon solid fa-home">
 						<strong>Address</strong>
-						1234 Fictional Avenue<br />Nashville, TN 00000
+						305 Bay St.<br />
+            Monroe, NC 28079
 					</li>
 					<li className="icon solid fa-phone">
 						<strong>Phone</strong>
-						(000) 000-0000
+						<a href="tel:7042751425">(704) 275-1425</a>
 					</li>
 					<li className="icon solid fa-envelope">
 						<strong>Email</strong>
-						information@untitled.tld
+						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
 					</li>
 				</ul>
 				<form action="#" method="post">
