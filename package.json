@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "fs": "0.0.1-security",
     "next": "12",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "sass": "^1.54.9"
+    "react-slick": "^0.28.1",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
     "eslint": "8.23.1",
