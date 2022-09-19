@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import Cta from 'sections/cta'
-import Hero from 'sections/hero'
 import Services from 'sections/services'
 import Solutions from 'sections/solutions'
 
-const HomePage = (props) => {
-  const { width } = props
+
+const ServicesPage = () => {
   return (
-      <div id="main">
-        <Hero />
+    <div id="main">
         <Services />
         <Solutions 
           content={[
@@ -33,5 +31,4 @@ const HomePage = (props) => {
       </div>
   )
 }
-
-export default HomePage
+export default ServicesPage
