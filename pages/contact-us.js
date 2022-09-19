@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import ContactUs from 'sections/contact-us'
+import Contact from 'sections/contact-us'
 
 const ContactUs = (props) => {
-	return <ContactUs props = {props} />
+	return <Contact props = {props} />
 }
 
 export default ContactUs
