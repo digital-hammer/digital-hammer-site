@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-
-export default (props) => {
+const Home = (props) => {
   const { width } = props
   return (
 
@@ -88,3 +87,5 @@ export default (props) => {
 
   )
 }
+
+export default Home
