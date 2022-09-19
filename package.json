@@ -11,8 +11,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "next": "12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "sass": "^1.54.9"
   },
   "devDependencies": {
