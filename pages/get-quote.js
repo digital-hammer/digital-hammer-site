@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-// import QuoteMachine from 'sections/quoteMachine'
+import QuoteMachine from 'sections/quoteMachine'
 
 const ContactUs = (props) => {
 	return (

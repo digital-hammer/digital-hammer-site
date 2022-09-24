@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PriceBox from 'components';
+import PriceBox from 'components/priceBox';
 
 const QuoteMachine = (props) => {
 
@@ -79,12 +79,7 @@ const QuoteMachine = (props) => {
         window.open("/thanks", "_self");
     }
 
-    let cards = [ 
-        <Pages value={ info.pages } update={ changeInfo } />, 
-        <BasicNeeds value={ info.basicNeeds } update={ changeInfo } />, 
-        <BackEndNeeds value={ info.backEndNeeds } update={ changeInfo } />, 
-        <InfoForm value={ info.infoForm } update={ changeInfo } submitForm={ submitForm } />
-    ]
+    let cards = []
 
     return (
         <div className='container flex-wrap flex-row d-flex justify-content-center align-items-center'>
@@ -99,8 +94,8 @@ const QuoteMachine = (props) => {
                     {definition}
                 </div>
                 <div className="my-4 pr-md-5 pr-3 d-flex justify-content-end col-12">
-                    { spot !== 0 ? <Button size='lg' simple onClick={ prev }>Previous</Button> : null }
-                    { spot !== cards.length -1 ? <Button size='lg' onClick={ next }>Next</Button> : null }
+                    { spot !== 0 ? <button onClick={ prev }>Previous</button> : null }
+                    { spot !== cards.length - 1 ? <button onClick={ next }>Next</button> : null }
                 </div>
             </div>     
             <div className="col-12 col-md-4">
