@@ -3503,6 +3503,16 @@ body.is-preload #banner footer {
 
 }
 
+#quote-machine {
+	background-image: url("/images/header-bg.svg"), -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), -ms-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-attachment: fixed;
+	background-position: 100% 25%;
+	padding: 4.5em 0 2em;
+}
+
 #contact-us {
 	background-image: url("/images/header-bg.svg"), -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
 	background-image: url("/images/header-bg.svg"), -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
@@ -3513,17 +3523,19 @@ body.is-preload #banner footer {
 	padding: 4.5em 0 2em;
 }
 
-#contact-us>.inner {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	margin: 0 auto 3em;
-	max-width: 75em;
-	width: calc(100% - 4em);
+#contact-us, #quote-machine {
+	>.inner {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		margin: 0 auto 3em;
+		max-width: 75em;
+		width: calc(100% - 4em);
+	}
 }
 
-#contact-us .contact {
+#contact-us .contact, #quote-machine .price-card {
 	padding: 4em 2.5em 2em 2.5em;
 	background-color: rgba(255, 255, 255, .8);
 	list-style-type: none;

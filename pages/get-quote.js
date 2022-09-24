@@ -1,29 +1,56 @@
-import { useState, useEffect, useRef } from 'react'
-import QuoteMachine from 'sections/quoteMachine'
+import React, { useState } from 'react';
+import PriceBox from 'components/price-box';
 
-const ContactUs = (props) => {
+const GetQuote = (props) => {
+
+	const [info, setInfo] = useState();
+	const [spot, setSpot] = useState(0);
+	const [definition, setDef] = useState("");
+
+	const next = () => {
+		if (spot < 3) {
+			setSpot(spot + 1);
+			setDef("");
+		}
+	}
+
+	const prev = () => {
+		if (spot > 0) {
+			setSpot(spot - 1);
+			setDef("");
+		}
+	}
+
+	const changeInfo = (newInfo, el, def) => {
+		let updatedInfo = { ...info }
+		updatedInfo[el] = { ...newInfo }
+		setInfo(updatedInfo);
+		setDef(def)
+	}
+
+	const submitForm = () => {
+		window.open("/thanks", "_self");
+	}
 	return (
-		<section id="contact-us">
-			<div className="inner">
-				<ul className="contact">
-					<li className="icon solid fa-home">
-						<strong>Address</strong>
-						305 Bay St.<br />
-            Monroe, NC 28079
-					</li>
-					<li className="icon solid fa-phone">
-						<strong>Phone</strong>
-						<a href="tel:7042751425">(704) 275-1425</a>
-					</li>
-					<li className="icon solid fa-envelope">
-						<strong>Email</strong>
-						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
-					</li>
-				</ul>
-				<QuoteMachine />
+		<div id="quote-machine">
+			<div className="col-12 col-md-8">
+				<div>
+					<h4>
+						Step {spot + 1} of {cards.length}
+					</h4>
+				</div>
+				{cards[spot]}
+				<div>
+					{definition}
+				</div>
+				<div className="my-4 pr-md-5 pr-3 d-flex justify-content-end col-12">
+					{spot !== 0 ? <button onClick={prev}>Previous</button> : null}
+					{spot !== cards.length - 1 ? <button onClick={next}>Next</button> : null}
+				</div>
 			</div>
-		</section>
-	)
+			<PriceBox lineItems={lineItems} total={total} />
+		</div>
+	);
 }
 
-export default ContactUs
+export default GetQuote
