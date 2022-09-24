@@ -20,7 +20,7 @@ const ContactUs = (props) => {
 						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
 					</li>
 				</ul>
-				{/* <QuoteMachine /> */}
+				<QuoteMachine />
 			</div>
 		</section>
 	)

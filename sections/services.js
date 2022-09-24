@@ -1,21 +1,25 @@
 export default (props) => {
-  const { content = [
-    {
-      icon: 'fa-gem',
-      title: 'Low Cost Hosting',
-      body: 'Praesent egestas quam at lorem imperdiet lobortis.',
-    },
-    {
-      icon: 'fa-gem',
-      title: 'Built In CMS',
-      body: 'Praesent egestas quam at lorem imperdiet lobortis.',
-    },
-    {
-      icon: 'fa-gem',
-      title: 'Free SSL Certificate',
-      body: 'Praesent egestas quam at lorem imperdiet lobortis.',
-    },
-  ], header="Hosting With Us", subheader = "" } = props || {}
+  const { 
+    content = [
+      {
+        icon: 'fa-gem',
+        title: 'Low Cost Hosting',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+      {
+        icon: 'fa-gem',
+        title: 'Built In CMS',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+      {
+        icon: 'fa-gem',
+        title: 'Free SSL Certificate',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+    ], 
+    header="Hosting With Us", 
+    subheader = "low cost quality hosting built With next.js speed" 
+  } = props || {}
   return (
     <section id="one" className="features">
       <header className="major">
