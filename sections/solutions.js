@@ -15,7 +15,7 @@ export default (props) => {
       body: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
       image: '/images/undraw/web_shopping.svg'
     },
-  ] } = props || {}
+  ]} = props || {}
   return (
     <>
       {content.map((data, idx) => {
