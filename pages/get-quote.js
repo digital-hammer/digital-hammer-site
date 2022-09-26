@@ -5,23 +5,23 @@ import QuoteCard from 'components/quote-card';
 const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();
-	const [position, setposition] = useState(0);
-	const [definition, setDef] = useState("");
+	const [position, setPosition] = useState(0);
+	const [definition, setDefinition] = useState("");
 	const [lineItems, setLineItems] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const content = []
 
 	const next = () => {
 		if (position < content.length) {
-			setposition(position + 1);
-			setDef("");
+			setPosition(position + 1);
+			setDefinition("");
 		}
 	}
 
 	const prev = () => {
 		if (position > 0) {
-			setposition(position - 1);
-			setDef("");
+			setPosition(position - 1);
+			setDefinition("");
 		}
 	}
 
@@ -29,7 +29,7 @@ const GetQuote = (props) => {
 		let updatedInfo = { ...info }
 		updatedInfo[el] = { ...newInfo }
 		setInfo(updatedInfo);
-		setDef(def)
+		setDefinition(def)
 	}
 
 	const submitForm = () => {
