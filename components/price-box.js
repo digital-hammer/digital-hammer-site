@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PriceBox = (props) =>  {
+export default ()=> {
 	const {
 		lineItems = [],
 		total = 0
@@ -10,7 +10,7 @@ const PriceBox = (props) =>  {
 			{lineItems.map((el)=> {
 				const {text, total} = el
 				return (
-					<h5>
+					<h5 key={text}>
 							{text}: <span className="float-right">$ {total}</span>
 					</h5>
 				)
@@ -23,4 +23,3 @@ const PriceBox = (props) =>  {
 	);
 }
 	
-export default PriceBox
