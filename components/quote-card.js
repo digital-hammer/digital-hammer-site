@@ -5,9 +5,9 @@ export default (props)=> {
 
   return (
     <form>
-      {content.map((items)=> {
+      {/*content.map((items)=> {
         
-      })}
+      })*/}
     </form>
   )
 }
