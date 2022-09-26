@@ -1,5 +1,7 @@
-
 module.exports = {
-  target: 'serverless'
+  target: 'serverless',
+  eslint: {
+    ignoreDuringBuilds: true
+  }
 }
           

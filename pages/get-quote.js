@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PriceBox from 'components/price-box';
 import QuoteCard from 'components/quote-card';
 
