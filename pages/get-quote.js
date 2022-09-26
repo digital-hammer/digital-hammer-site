@@ -1,29 +1,64 @@
-import { useState, useEffect, useRef } from 'react'
-// import QuoteMachine from 'sections/quoteMachine'
+import React, { useState } from 'react';
+import PriceBox from 'components/price-box';
+import QuoteCard from 'components/quote-card';
 
-const ContactUs = (props) => {
+const GetQuote = (props) => {
+
+	const [info, setInfo] = useState();
+	const [position, setposition] = useState(0);
+	const [definition, setDef] = useState("");
+	const [lineItems, setLineItems] = useState([]);
+	const [totalPrice, setTotalPrice] = useState(0);
+	const content = []
+
+	const next = () => {
+		if (position < content.length) {
+			setposition(position + 1);
+			setDef("");
+		}
+	}
+
+	const prev = () => {
+		if (position > 0) {
+			setposition(position - 1);
+			setDef("");
+		}
+	}
+
+	const changeInfo = (newInfo, el, def) => {
+		let updatedInfo = { ...info }
+		updatedInfo[el] = { ...newInfo }
+		setInfo(updatedInfo);
+		setDef(def)
+	}
+
+	const submitForm = () => {
+		window.open("/thanks", "_self");
+	}
+
+	
 	return (
-		<section id="contact-us">
+		<div id="quote-machine">
 			<div className="inner">
-				<ul className="contact">
-					<li className="icon solid fa-home">
-						<strong>Address</strong>
-						305 Bay St.<br />
-            Monroe, NC 28079
-					</li>
-					<li className="icon solid fa-phone">
-						<strong>Phone</strong>
-						<a href="tel:7042751425">(704) 275-1425</a>
-					</li>
-					<li className="icon solid fa-envelope">
-						<strong>Email</strong>
-						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
-					</li>
-				</ul>
-				{/* <QuoteMachine /> */}
+				<div id="quote-builder">
+					<div>
+						<h4>
+							Step {position + 1} of {content.length}
+						</h4>
+					</div>
+					<QuoteCard content={content} position={position} />
+					<div>
+						{definition}
+					</div>
+					<div className="">
+						{position !== 0 ? <button onClick={prev}>Previous</button> : null}
+						{position !== content.length - 1 && <button onClick={next}>Next</button>}
+					</div>
+				</div>
+			<PriceBox lineItems={lineItems} total={totalPrice} />
 			</div>
-		</section>
-	)
+		</div>
+	);
 }
 
-export default ContactUs
+export default GetQuote

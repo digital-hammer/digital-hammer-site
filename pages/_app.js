@@ -23,8 +23,8 @@ function MyApp({ Component, pageProps }) {
         <Header width={width} />
         <div id="page-wrapper">
           <Component {...pageProps} width={width} />
+          <Footer />
         </div>
-        <Footer />
     </>
   )
 }

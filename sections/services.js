@@ -1,27 +1,42 @@
 export default (props) => {
+  const { 
+    content = [
+      {
+        icon: 'fa-gem',
+        title: 'Low Cost Hosting',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+      {
+        icon: 'fa-gem',
+        title: 'Built In CMS',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+      {
+        icon: 'fa-gem',
+        title: 'Free SSL Certificate',
+        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+      },
+    ], 
+    header="Hosting With Us", 
+    subheader = "low cost quality hosting built With next.js speed" 
+  } = props || {}
   return (
     <section id="one" className="features">
       <header className="major">
-        <h2>Magna sed consequat</h2>
-        <p>Mauris lectus odio, mattis nec velit eu, luctus dictum diam. Quis<br />
-          tempus que ornare purus a bibendum ultricies.</p>
+        <h2>{header}</h2>
+        <p>{typeof subheader === "string" ? subheader : subheader.map((el)=> <>{el}<br/></>)}</p>
       </header>
       <div className="content">
-        <section className="feature">
-          <span className="icon major fa-gem"></span>
-          <h3>Etiam sed feugiat</h3>
-          <p>Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipit euismod habitant lorem ipsum dolor.</p>
-        </section>
-        <section className="feature">
-          <span className="icon major fa-save"></span>
-          <h3>Ipsum et bibendum</h3>
-          <p>Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipit euismod habitant lorem ipsum dolor.</p>
-        </section>
-        <section className="feature">
-          <span className="icon major fa-newspaper"></span>
-          <h3>Sit lorem aliquam</h3>
-          <p>Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipit euismod habitant lorem ipsum dolor.</p>
-        </section>
+        {content.map((data, idx)=> {
+          const {title, body, icon} = data
+          return (
+            <section key={header + idx} className="feature">
+              <span className={`icon major ${icon}`}></span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </section>
+          )
+        })}
       </div>
     </section>
   )
