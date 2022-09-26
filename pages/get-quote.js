@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import PriceBox from 'components/price-box';
+import QuoteCard from 'components/quote-card';
 
 const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();
-	const [spot, setSpot] = useState(0);
+	const [position, setposition] = useState(0);
 	const [definition, setDef] = useState("");
+	const [lineItems, setLineItems] = useState([]);
+	const [totalPrice, setTotalPrice] = useState(0);
+	const content = []
 
 	const next = () => {
-		if (spot < 3) {
-			setSpot(spot + 1);
+		if (position < content.length) {
+			setposition(position + 1);
 			setDef("");
 		}
 	}
 
 	const prev = () => {
-		if (spot > 0) {
-			setSpot(spot - 1);
+		if (position > 0) {
+			setposition(position - 1);
 			setDef("");
 		}
 	}
@@ -31,24 +35,28 @@ const GetQuote = (props) => {
 	const submitForm = () => {
 		window.open("/thanks", "_self");
 	}
+
+	
 	return (
 		<div id="quote-machine">
-			<div className="col-12 col-md-8">
-				<div>
-					<h4>
-						Step {spot + 1} of {cards.length}
-					</h4>
+			<div className="inner">
+				<div id="quote-builder">
+					<div>
+						<h4>
+							Step {position + 1} of {content.length}
+						</h4>
+					</div>
+					<QuoteCard content={content} position={position} />
+					<div>
+						{definition}
+					</div>
+					<div className="">
+						{position !== 0 ? <button onClick={prev}>Previous</button> : null}
+						{position !== content.length - 1 && <button onClick={next}>Next</button>}
+					</div>
 				</div>
-				{cards[spot]}
-				<div>
-					{definition}
-				</div>
-				<div className="my-4 pr-md-5 pr-3 d-flex justify-content-end col-12">
-					{spot !== 0 ? <button onClick={prev}>Previous</button> : null}
-					{spot !== cards.length - 1 ? <button onClick={next}>Next</button> : null}
-				</div>
+			<PriceBox lineItems={lineItems} total={totalPrice} />
 			</div>
-			<PriceBox lineItems={lineItems} total={total} />
 		</div>
 	);
 }
