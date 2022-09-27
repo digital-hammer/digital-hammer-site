@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import Cta from 'sections/cta'
-import Hero from 'sections/hero'
-import Services from 'sections/services'
-import Solutions from 'sections/solutions'
-import Parallax from 'components/parallax'
+import Cta from 'src/sections/cta'
+import Hero from 'src/sections/hero'
+import Services from 'src/sections/services'
+import Solutions from 'src/sections/solutions'
+import Parallax from 'src/components/parallax'
 const HomePage = (props) => {
   const { width } = props
   return (

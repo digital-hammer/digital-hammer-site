@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Header from 'sections/header'
-import Footer from 'sections/footer'
+import Header from 'src/sections/header'
+import Footer from 'src/sections/footer'
 import 'styles/_appDefault.scss'
 import 'styles/fontawesome-all.min.css'
 
