@@ -1,18 +1,21 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGem } from '@fortawesome/free-solid-svg-icons'
+
 export default (props) => {
   const { 
     content = [
       {
-        icon: 'fa-gem',
+        icon: faGem,
         title: 'Low Cost Hosting',
         body: 'Praesent egestas quam at lorem imperdiet lobortis.',
       },
       {
-        icon: 'fa-gem',
+        icon: faGem,
         title: 'Built In CMS',
         body: 'Praesent egestas quam at lorem imperdiet lobortis.',
       },
       {
-        icon: 'fa-gem',
+        icon: faGem,
         title: 'Free SSL Certificate',
         body: 'Praesent egestas quam at lorem imperdiet lobortis.',
       },
@@ -35,7 +38,12 @@ export default (props) => {
               className={`feature ${link && 'link'}`}
               href={link && link}
             >
-              <span className={`icon major ${icon}`}></span>
+              <div className="icon-wrapper">
+                <FontAwesomeIcon 
+                  size="xl"
+                  icon={icon} 
+                />
+              </div>
               <h3>{title}</h3>
               <p>{body}</p>
             </a>
