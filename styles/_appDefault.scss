@@ -3330,7 +3330,7 @@ body.is-preload #banner footer {
 	border-top-width: 1px;
 	cursor: unset;
 
-	span, h3, h4, h5, h6, p {
+	span, h3, h4, h5, h6, p, svg {
 		color: $white;
 	}
 	
@@ -3339,7 +3339,7 @@ body.is-preload #banner footer {
 			transition: .8s;
 			background-color: $grey-light;
 			cursor: pointer;
-			span, h3, h4, h5, h6, p {
+			span, h3, h4, h5, h6, p, svg {
 				color: $primary;
 			}
 		}
@@ -4257,4 +4257,8 @@ label.switch {
 	left: 0;
 	right: 0;
 	z-index: -1;
+}
+
+.icon-wrapper {
+	margin-bottom: 1em;
 }

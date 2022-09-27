@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react'
 import Cta from 'sections/cta'
 import Services from 'sections/services'
 import Solutions from 'sections/solutions'
+import { faGem, faCommentsDollar, faPenNib, faGears, faShield, faStore} from '@fortawesome/free-solid-svg-icons'
 
 const ServicesPage = () => {
   const content = [
     {
-      icon: 'fa-gem',
+      icon: faGem,
       image: '/images/undraw/server_down.svg',
       id: "hosting",
       title: 'Low Cost Hosting',
@@ -14,7 +15,7 @@ const ServicesPage = () => {
       bodyFull: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
     },
     {
-      icon: 'fa-gem',
+      icon: faGears,
       image: '/images/undraw/website_builder.svg',
       id: "cms",
       title: 'Built In CMS',
@@ -22,7 +23,7 @@ const ServicesPage = () => {
       bodyFull: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
     },
     {
-      icon: 'fa-gem',
+      icon: faShield,
       image: '/images/undraw/security.svg',
       id: "ssl",
       title: 'Free SSL Certificate',
@@ -30,7 +31,7 @@ const ServicesPage = () => {
       bodyFull: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
     },
     {
-      icon: 'fa-gem',
+      icon: faCommentsDollar,
       image: '/images/undraw/savings.svg',
       id: "cost-efficient",
       title: 'Cost Efficient Sites',
@@ -38,7 +39,7 @@ const ServicesPage = () => {
       bodyFull: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
     },
     {
-      icon: 'fa-gem',
+      icon: faPenNib,
       image: '/images/undraw/building_websites.svg',
       id: "custom",
       title: 'Custom Designed Sites',
@@ -46,7 +47,7 @@ const ServicesPage = () => {
       bodyFull: 'Praesent egestas quam at lorem imperdiet lobortis. Mauris condimentum et euismod ipsum, at ullamcorper libero dolor auctor sit amet. Proin vulputate amet sem ut tempus. Donec quis ante viverra, suscipa facilisis at, vestibulum id urna. Lorem ipsum dolor sit amet sollicitudin.',
     },
     {
-      icon: 'fa-gem',
+      icon: faStore,
       image: '/images/undraw/web_shopping.svg',
       id: "shopify",
       title: 'eCommerce Through Shopify',
