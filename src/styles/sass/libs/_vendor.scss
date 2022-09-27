@@ -321,14 +321,14 @@
 
 // Mixins.
 
-	/// Wraps @content in vendorized keyframe blocks.
+	/// Wraps @/content in vendorized keyframe blocks.
 	/// @param {string} $name Name.
 	@mixin keyframes($name) {
 
-		@-moz-keyframes #{$name} { @content; }
-		@-webkit-keyframes #{$name} { @content; }
-		@-ms-keyframes #{$name} { @content; }
-		@keyframes #{$name} { @content; }
+		@-moz-keyframes #{$name} { @/content; }
+		@-webkit-keyframes #{$name} { @/content; }
+		@-ms-keyframes #{$name} { @/content; }
+		@keyframes #{$name} { @/content; }
 
 	}
 

@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import PriceBox from 'components/price-box';
-import QuoteCard from 'components/quote-card';
-import formData from 'components/quote-form-data'
+import { useState } from 'react'
+import PriceBox from '@/components/price-box'
+import QuoteCard from '@/components/quote-card'
+import formData from '@/data/quote-form'
 const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();

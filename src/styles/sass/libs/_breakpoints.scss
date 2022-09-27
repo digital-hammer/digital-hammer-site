@@ -14,15 +14,15 @@
 		$breakpoints: $x !global;
 	}
 
-	/// Wraps @content in a @media block targeting a specific orientation.
+	/// Wraps @/content in a @media block targeting a specific orientation.
 	/// @param {string} $orientation Orientation.
 	@mixin orientation($orientation) {
 		@media screen and (orientation: #{$orientation}) {
-			@content;
+			@/content;
 		}
 	}
 
-	/// Wraps @content in a @media block using a given query.
+	/// Wraps @/content in a @media block using a given query.
 	/// @param {string} $query Query.
 	@mixin breakpoint($query: null) {
 
@@ -217,7 +217,7 @@
 
 		// Output.
 	        @media #{$media} {
-				@content;
+				@/content;
 			}
 
 	}
