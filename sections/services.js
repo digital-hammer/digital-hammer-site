@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGem } from '@fortawesome/free-solid-svg-icons'
+import { faGem, faCommentsDollar, faPen, faGears, faShield } from '@fortawesome/free-solid-svg-icons'
 
 export default (props) => {
   const { 
@@ -40,7 +40,7 @@ export default (props) => {
             >
               <div className="icon-wrapper">
                 <FontAwesomeIcon 
-                  size="xl"
+                  size="2xl"
                   icon={icon} 
                 />
               </div>
