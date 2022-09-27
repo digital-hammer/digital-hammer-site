@@ -7,7 +7,7 @@ const ServicesPage = () => {
   const content = [
     {
       icon: 'fa-gem',
-      image: '/images/undraw/savings.svg',
+      image: '/images/undraw/server_down.svg',
       id: "hosting",
       title: 'Low Cost Hosting',
       body: 'Praesent egestas quam at lorem imperdiet lobortis.',
@@ -23,7 +23,7 @@ const ServicesPage = () => {
     },
     {
       icon: 'fa-gem',
-      image: '/images/undraw/savings.svg',
+      image: '/images/undraw/security.svg',
       id: "ssl",
       title: 'Free SSL Certificate',
       body: 'Praesent egestas quam at lorem imperdiet lobortis.',
@@ -39,7 +39,7 @@ const ServicesPage = () => {
     },
     {
       icon: 'fa-gem',
-      image: '/images/undraw/design_feedback.svg',
+      image: '/images/undraw/building_websites.svg',
       id: "custom",
       title: 'Custom Designed Sites',
       body: 'Praesent egestas quam at lorem imperdiet lobortis.',
