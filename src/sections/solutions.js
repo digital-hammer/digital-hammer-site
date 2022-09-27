@@ -8,9 +8,9 @@ export default (props) => {
     <>
       {options.map((el, idx) => {
         if (!services[el]) return console.error(`No services element with name: ${el}.`)
-        const { title, bodyFull, image, id} = services[el]
+        const { title, bodyFull, image} = services[el]
         return (
-          <section id={id} key={"card" + idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
+          <section id={el} key={"card" + idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
             <div className="image">
               <img src={image} alt="" />
             </div>

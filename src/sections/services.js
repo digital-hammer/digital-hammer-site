@@ -5,7 +5,9 @@ export default (props) => {
   const { 
     header="Hosting With Us", 
     subheader = "low cost quality hosting built With next.js speed",
-    options = ["hosting", "cms", "ssl"]
+    options = ["hosting", "cms", "ssl"],
+    linkAll=false,
+    links={}
   } = props || {}
   return (
     <section id="one" className="features">
@@ -16,12 +18,13 @@ export default (props) => {
       <div className="content">
         {options.map((el, idx)=> {
           if (!services[el]) return console.error(`No services element with name ${el}.`)
-          const {title, body, icon, link=false} = services[el]
+          const {title, body, icon} = services[el]
+          const link = linkAll || links[el]
           return (
             <a 
               key={header + idx} 
               className={`feature ${link && 'link'}`}
-              href={link && link}
+              href={link && `#${el}`}
             >
               <center>
               <div className="icon-wrapper">

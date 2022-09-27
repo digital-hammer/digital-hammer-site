@@ -10,6 +10,7 @@ const ServicesPage = () => {
           header="Our Services" 
           subheader="Great development at an even better price"
           options={options}
+          linkAll={true}
         />
         <Solutions options={options} />
         <Cta />
