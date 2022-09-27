@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
-import Cta from 'src/sections/cta'
-import Services from 'src/sections/services'
-import Solutions from 'src/sections/solutions'
+import Cta from '@/sections/cta'
+import Services from '@/sections/services'
+import Solutions from '@/sections/solutions'
 
 const ServicesPage = () => {
   const options = ["hosting", "cms", "ssl", "efficient", "custom", "shopify"]

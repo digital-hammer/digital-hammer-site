@@ -1,4 +1,4 @@
-import services from "src/data/services"
+import services from "@/data/services"
 
 export default (props) => {
   const { 
