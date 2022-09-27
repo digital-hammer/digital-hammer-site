@@ -23,21 +23,17 @@ export default (props) => {
           return (
             <a 
               key={header + idx} 
-              className={`feature ${link && 'link'}`}
+              className={`service ${link && 'link'}`}
               href={link && `#${el}`}
             >
-              <center>
               <div className="icon-wrapper">
                 <FontAwesomeIcon 
                   size="2xl"
                   icon={icon} 
                 />
               </div>
-              
               <h3>{title}</h3>
-              </center>
-                <p>{body}</p>
-              
+              <p>{body}</p>
             </a>
           )
         })}

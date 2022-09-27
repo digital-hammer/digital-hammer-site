@@ -3321,7 +3321,7 @@ body.is-preload #banner footer {
 	flex-wrap: wrap;
 }
 
-#main .services .content .feature {
+#main .services .content .service {
 	padding: 4em 3em 2em 3em;
 	width: 33.333333333%;
 	border-style: solid;
@@ -3329,7 +3329,7 @@ body.is-preload #banner footer {
 	border-left-width: 1px;
 	border-top-width: 1px;
 	cursor: unset;
-
+	display: block;
 	span, h3, h4, h5, h6, p, svg {
 		color: $white;
 	}
@@ -3348,11 +3348,11 @@ body.is-preload #banner footer {
 
 }
 
-#main .services .content .feature:nth-child(-n + 3) {
+#main .services .content .service:nth-child(-n + 3) {
 	border-top-width: 0;
 }
 
-#main .services .content .feature:nth-child(3n - 2) {
+#main .services .content .service:nth-child(3n - 2) {
 	border-left-width: 0;
 }
 
@@ -3433,7 +3433,7 @@ body.is-preload #banner footer {
 		padding: 3em 3em 1em 3em;
 	}
 
-	#main .services .content .feature {
+	#main .services .content .service {
 		padding: 3em 2em 1em 2em;
 	}
 
@@ -3453,13 +3453,13 @@ body.is-preload #banner footer {
 		display: block;
 	}
 
-	#main .services .content .feature {
+	#main .services .content .service {
 		width: 100%;
 		border-left: 0;
 		border-top: solid 1px $grey-dark  !important;
 	}
 
-	#main .services .content .feature:first-child {
+	#main .services .content .service:first-child {
 		border-top: 0 !important;
 	}
 
@@ -3499,7 +3499,7 @@ body.is-preload #banner footer {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .services .content .feature {
+	#main .services .content .service {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
