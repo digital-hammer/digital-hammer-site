@@ -5,13 +5,11 @@ const AboutUsPage = () => {
         <header className="major">
           <h2>About Us</h2>
           <p>Welcome to Digital Hammer</p>
-          <p>Digital Hammer is a web-development company that offers ultra fast websites at a cost well below market. 
-            We also offer other types of websites and will work with you to get you a product to meet your specifications
-
-          </p>
         </header>
         <div className="content">
-
+          <h3>Digital Hammer is a web-development company that offers ultra fast websites at a cost well below market. 
+            We also offer other types of websites and will work with you to get you a product to meet your specifications
+          </h3>
           <h2>The people that built Digital Hammer</h2>
           <h1>Joseph Chica,</h1>
           <h3>CEO and Co-Founder</h3>
