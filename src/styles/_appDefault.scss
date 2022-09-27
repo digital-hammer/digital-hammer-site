@@ -3306,11 +3306,11 @@ body.is-preload #banner footer {
 	padding: 4em 4em 2em 4em;
 }
 
-#main .features {
+#main .services {
 	background-color: $black;
 }
 
-#main .features .content {
+#main .services .content {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -3321,7 +3321,7 @@ body.is-preload #banner footer {
 	flex-wrap: wrap;
 }
 
-#main .features .content .feature {
+#main .services .content .feature {
 	padding: 4em 3em 2em 3em;
 	width: 33.333333333%;
 	border-style: solid;
@@ -3348,11 +3348,11 @@ body.is-preload #banner footer {
 
 }
 
-#main .features .content .feature:nth-child(-n + 3) {
+#main .services .content .feature:nth-child(-n + 3) {
 	border-top-width: 0;
 }
 
-#main .features .content .feature:nth-child(3n - 2) {
+#main .services .content .feature:nth-child(3n - 2) {
 	border-left-width: 0;
 }
 
@@ -3366,6 +3366,8 @@ body.is-preload #banner footer {
 	-ms-align-items: center;
 	align-items: center;
 	background-color: $black;
+	scroll-margin-top: 30vh;
+
 }
 
 #main .spotlight .image {
@@ -3431,7 +3433,7 @@ body.is-preload #banner footer {
 		padding: 3em 3em 1em 3em;
 	}
 
-	#main .features .content .feature {
+	#main .services .content .feature {
 		padding: 3em 2em 1em 2em;
 	}
 
@@ -3447,17 +3449,17 @@ body.is-preload #banner footer {
 
 @media screen and (max-width: 980px) {
 
-	#main .features .content {
+	#main .services .content {
 		display: block;
 	}
 
-	#main .features .content .feature {
+	#main .services .content .feature {
 		width: 100%;
 		border-left: 0;
 		border-top: solid 1px $grey-dark  !important;
 	}
 
-	#main .features .content .feature:first-child {
+	#main .services .content .feature:first-child {
 		border-top: 0 !important;
 	}
 
@@ -3471,7 +3473,9 @@ body.is-preload #banner footer {
 	}
 
 	#main .spotlight .image img {
-		margin-top: -8em;
+		width: 80%;
+		height: 80%;
+		margin: auto;
 	}
 
 	#main .spotlight .content {
@@ -3495,8 +3499,12 @@ body.is-preload #banner footer {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .features .content .feature {
+	#main .services .content .feature {
 		padding: 3em 1.5em 1em 1.5em;
+	}
+
+	#main .spotlight {
+		scroll-margin-top: 20vh;
 	}
 
 	#main .spotlight .content {

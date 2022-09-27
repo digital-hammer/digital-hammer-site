@@ -44,7 +44,7 @@ export default {
     icon: faPenNib,
     image: "/images/undraw/building_websites.svg",
     title: "Custom Designed Sites",
-    body: "Custom designed websites that are built to your needs.",
+    body: "Custom, engaging websites that attract your target audience",
     bodyFull: `Communication is vital for building customized sites 
     and offering the agile methodology will guarantee we are all 
     on the same page for how you want your website to look like`,

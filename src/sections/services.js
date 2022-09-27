@@ -10,7 +10,7 @@ export default (props) => {
     links={}
   } = props || {}
   return (
-    <section id="one" className="features">
+    <section className="services">
       <header className="major">
         <h2>{header}</h2>
         <p>{typeof subheader === "string" ? subheader : subheader.map((el)=> <>{el}<br/></>)}</p>
