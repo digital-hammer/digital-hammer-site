@@ -7,17 +7,17 @@ export default (props) => {
       {
         icon: faGem,
         title: 'Low Cost Hosting',
-        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+        body: 'We offer the best pricing available for fast reacting websites',
       },
       {
-        icon: faGem,
+        icon: faGears,
         title: 'Built In CMS',
-        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+        body: 'You will be able to control the content management system without having to code anything!',
       },
       {
-        icon: faGem,
+        icon: faShield,
         title: 'Free SSL Certificate',
-        body: 'Praesent egestas quam at lorem imperdiet lobortis.',
+        body: 'Authenticating your websites identity for free!',
       },
     ], 
     header="Hosting With Us", 
@@ -38,14 +38,18 @@ export default (props) => {
               className={`feature ${link && 'link'}`}
               href={link && link}
             >
+              <center>
               <div className="icon-wrapper">
                 <FontAwesomeIcon 
                   size="2xl"
                   icon={icon} 
                 />
               </div>
+              
               <h3>{title}</h3>
-              <p>{body}</p>
+              </center>
+                <p>{body}</p>
+              
             </a>
           )
         })}

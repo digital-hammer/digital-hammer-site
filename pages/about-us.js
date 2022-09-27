@@ -4,8 +4,8 @@ const AboutUsPage = () => {
       <section id="content" className="default">
         <header className="major">
           <h2>About Us</h2>
-          <p>Mauris lectus odio, mattis nec velit eu, luctus dictum diam. Quis<br />
-            tempus que ornare purus a bibendum ultricies.</p>
+          <p>Welcome to Digital Hammer</p>
+          <p>Digital Hammer is a web-development company that offers ultra fast websites at a cost well below market.</p>
         </header>
         <div className="content">
 
