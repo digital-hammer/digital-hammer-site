@@ -19,9 +19,9 @@ export default (props) => {
   return (
     <>
       {content.map((data, idx) => {
-        const { title, body, image } = data
+        const { title, body, image, id} = data
         return (
-          <section key={"card" + idx} id={idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
+          <section id={id} key={"card" + idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
             <div className="image">
               <img src={image} alt="" />
             </div>

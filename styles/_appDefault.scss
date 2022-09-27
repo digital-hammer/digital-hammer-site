@@ -3327,6 +3327,19 @@ body.is-preload #banner footer {
 	border-color: $grey-dark;
 	border-left-width: 1px;
 	border-top-width: 1px;
+
+	&.link {
+		&:hover {
+			transition: .8s;
+			background-color: $grey-light;
+
+			span, h3, h4, h5, h6, p {
+				color: $primary;
+			}
+		}
+	}
+
+
 }
 
 #main .features .content .feature:nth-child(-n + 3) {
@@ -3351,6 +3364,7 @@ body.is-preload #banner footer {
 
 #main .spotlight .image {
 	width: 33.333333333%;
+	min-height: 100%;
 	background-color: $grey;
 	padding: 2em 1em;
 }
