@@ -28,13 +28,17 @@ export default (props) => {
       </header>
       <div className="content">
         {content.map((data, idx)=> {
-          const {title, body, icon} = data
+          const {title, body, icon, link=""} = data
           return (
-            <section key={header + idx} className="feature">
+            <a 
+              key={header + idx} 
+              className={`feature ${link && 'link'}`}
+              href={link}
+            >
               <span className={`icon major ${icon}`}></span>
               <h3>{title}</h3>
               <p>{body}</p>
-            </section>
+            </a>
           )
         })}
       </div>

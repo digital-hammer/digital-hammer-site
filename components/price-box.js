@@ -1,13 +1,13 @@
 
 export default (props)=> {
 	const {
-		lineItems = [],
+		lineItems = {},
 		total = 0
 	} = props || {}
 	return (
 		<div id="price-box">
-			{lineItems.map((el)=> {
-				const {text, total} = el
+			{Object.entries(lineItems).map(([text, total])=> {
+				
 				return (
 					<h5 key={text}>
 							{text}: <span className="float-right">$ {total}</span>

@@ -19,7 +19,7 @@ const ContactUs = (props) => {
 						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
 					</li>
 				</ul>
-				<form name="contact page" action="/success" method="POST" data-netlify="true">
+				<form netlify name="contact" action="/success" method="POST" data-netlify="true">
 					<h4>Get in touch</h4>
 					<div className="fields">
 						<div className="field half">
