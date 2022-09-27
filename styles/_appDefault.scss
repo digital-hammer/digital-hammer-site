@@ -3327,12 +3327,17 @@ body.is-preload #banner footer {
 	border-color: $grey-dark;
 	border-left-width: 1px;
 	border-top-width: 1px;
+	cursor: unset;
 
+	span, h3, h4, h5, h6, p {
+		color: $white;
+	}
+	
 	&.link {
 		&:hover {
 			transition: .8s;
 			background-color: $grey-light;
-
+			cursor: pointer;
 			span, h3, h4, h5, h6, p {
 				color: $primary;
 			}
