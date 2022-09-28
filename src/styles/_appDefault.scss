@@ -4312,7 +4312,7 @@ label.switch {
 		display: flex;
 		align-items: stretch;
 		position: relative;
-		width: 90%;
+		width: 45%;
 		overflow: hidden;
 
 		h3 {
@@ -4377,6 +4377,20 @@ label.switch {
 			background-image: -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
 			background-image: -ms-linear-gradient(45deg, $primary 20%, $secondary 80%);
 			background-image: linear-gradient(45deg, $primary 20%, $secondary 80%);
+		}
+	}
+}
+
+@media screen and (max-width: 980px) {
+
+	#profiles{
+		 .inner {
+			flex-direction: column;
+			padding: 1em 2em;
+			.card {
+				width: 100%;
+				margin: 1em auto;
+			}
 		}
 	}
 }
