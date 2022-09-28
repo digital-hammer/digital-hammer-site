@@ -3330,16 +3330,30 @@ body.is-preload #banner footer {
 	border-top-width: 1px;
 	cursor: unset;
 	display: block;
-	span, h3, h4, h5, h6, p, svg {
+
+	span,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	svg {
 		color: $white;
 	}
-	
-	&.link {		
+
+	&.link {
 		&:hover {
 			transition: .8s;
 			background-color: $grey-light;
 			cursor: pointer;
-			span, h3, h4, h5, h6, p, svg {
+
+			span,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			svg {
 				color: $primary;
 			}
 		}
@@ -3625,7 +3639,7 @@ body.is-preload #banner footer {
 
 	h4 {
 		color: $primary-dark;
-	} 
+	}
 }
 
 #contact-us form,
@@ -4206,12 +4220,12 @@ label.switch {
 	width: 60px;
 	height: 34px;
 
-	.switch input { 
+	.switch input {
 		opacity: 0;
 		width: 0;
 		height: 0;
 	}
-	
+
 	.slider {
 		position: absolute;
 		cursor: pointer;
@@ -4223,7 +4237,7 @@ label.switch {
 		-webkit-transition: .4s;
 		transition: .4s;
 	}
-	
+
 	.slider:before {
 		position: absolute;
 		content: "";
@@ -4235,26 +4249,26 @@ label.switch {
 		-webkit-transition: .4s;
 		transition: .4s;
 	}
-	
-	input:checked + .slider {
+
+	input:checked+.slider {
 		background-color: #2196F3;
 	}
-	
-	input:focus + .slider {
+
+	input:focus+.slider {
 		box-shadow: 0 0 1px #2196F3;
 	}
-	
-	input:checked + .slider:before {
+
+	input:checked+.slider:before {
 		-webkit-transform: translateX(26px);
 		-ms-transform: translateX(26px);
 		transform: translateX(26px);
 	}
-	
+
 	/* Rounded sliders */
 	.slider.round {
 		border-radius: 34px;
 	}
-	
+
 	.slider.round:before {
 		border-radius: 50%;
 	}
@@ -4277,4 +4291,98 @@ label.switch {
 
 .icon-wrapper {
 	margin-bottom: 1.2em;
+}
+
+#profiles {
+	font-family: Roboto, sans-serif;
+	margin: 0;
+	padding: 5em 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-image: -moz-linear-gradient(225deg, $primary 0%, $secondary 85%);
+	background-image: -webkit-linear-gradient(225deg, $primary 0%, $secondary 85%);
+	background-image: -ms-linear-gradient(225deg, $primary 0%, $secondary 85%);
+	background-image: linear-gradient(225deg, $primary 0%, $secondary 85%);
+
+	.card {
+		background: $grey-dark;
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+		max-width: 500px;
+		display: flex;
+		align-items: stretch;
+		border-radius: 25px;
+		position: relative;
+		width: 90%;
+		overflow: hidden;
+
+		h3 {
+			margin: 0;
+			padding: 0 1rem;
+		}
+
+		.title {
+			padding: 1rem;
+			text-align: right;
+			color: $secondary-light;
+			font-weight: bold;
+			font-size: 12px;
+		}
+
+		.info {
+			padding: 0.5rem 1rem;
+			font-size: 12px;
+		}
+
+		.actions {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			align-items: center;
+			padding: 0.5rem 1rem;
+		}
+
+		.img-avatar {
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			border-radius: 50%;
+			border: 6px solid $grey-dark;
+			background-color: $grey-dark;
+			top: 15px;
+			left: 60px;
+			z-index: 1;
+			overflow: hidden;
+
+			img {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				object-fit: cover;
+				object-position: center 30%;
+			}
+		}
+
+		.content {
+			padding: 2.5em 1.5em 1.5em 1.5em;
+		}
+
+		path {
+			fill: white;
+		}
+
+		.img-portada {
+			width: 100%;
+		}
+
+		.portada {
+			flex: 0 0 100px;
+			position: relative;
+			background-color: $primary;
+			background-image: -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
+			background-image: -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
+			background-image: -ms-linear-gradient(45deg, $primary 20%, $secondary 80%);
+			background-image: linear-gradient(45deg, $primary 20%, $secondary 80%);
+		}
+	}
 }
