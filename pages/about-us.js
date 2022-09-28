@@ -11,10 +11,37 @@ const AboutUsPage = () => {
           <div className="content">
             <h3>Who We Are</h3>
             <p>
-              Digital Hammer is a web-development company that offers ultra fast websites at a cost well below market.
-              We also offer other types of websites and will work with you to get you a product to meet your specifications. 
+              Started by two guys in North Carolina, The Digital Hammer 
+              is a web-development company offering ultra-fast websites 
+              at low prices. We have something for everyone, from low 
+              cost templated websites, to custom design, to eCommerce. 
+              We even offer custom software solutions outside of the web 
+              space. 
+            </p>
+            <h3>Our Process</h3>
+            <p>
+              At The Digital Hammer we use cutting technology and the 
+              most up to date web practices to design and develop high 
+              speed, modern, websites. Out of the box our websites include 
+              things like a built in CMS and free SSL at under half the 
+              cost of companies like word press hosting. Go daddy wants to 
+              charge you $75 just for an SSL certificate? How about $20 
+              for everything out of the box? And by building in React and 
+              next.js you can rest assured your websites load and update 
+              time is fast. 
             </p>
             <h3>A Brief History</h3>
+            <p>
+              The name Digital Hammer is a reference to Daedalus from Greek 
+              mythology. Daedalus (the father of Icarus) was a master builder 
+              known for his extraordinary inventions and creations, he is 
+              credited with the invention of carpentry itself. Other inventions 
+              include things like the moving labyrinth used to contain the bull 
+              of minos, the brass bull, sails and masts and many revolutionary 
+              inventions of his time. At the digital hammer we strive to be 
+              equally ingenuitive.
+            </p>
+            <h3>Conclusion</h3>
           </div>
         </section>
       </div>
