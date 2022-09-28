@@ -24,12 +24,20 @@ const ContactUs = (props) => {
 					<h4>Get in touch</h4>
 					<div className="fields">
 						<div className="field half">
+							<label>First Name</label>
+							<input name="first-name" id="name-first" type="text" placeholder="First Name" />
+						</div>
+						<div className="field half">
 							<label>Name</label>
-							<input name="name" id="name" type="text" placeholder="Name" />
+							<input name="name-last" id="name-last" type="text" placeholder="Last Name" />
 						</div>
 						<div className="field half">
 							<label>Email</label>
 							<input name="email" id="email" type="email" placeholder="Email" />
+						</div>
+						<div className="field half">
+							<label>Phone</label>
+							<input name="phone" id="phone" type="tel" placeholder="Phone" />
 						</div>
 						<div className="field">
 							<label>Message</label>
