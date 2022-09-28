@@ -23,7 +23,7 @@ const ContactUs = (props) => {
 					</li>
 				</ul>
 				<form name="contact" action="/success" method="POST" data-netlify="true">
-					<input type="hidden" name="contact" value="contact-form" />
+					<input type="hidden" name="contact-form" value="contact" />
 					<h4>Get in touch</h4>
 					<div className="fields">
 						<div className="field half">
