@@ -10,7 +10,7 @@ export default (props) => {
         title: "Co-Founder",
         info: "I'm a self taught developer of 6 years, with skills in all things frontend. I have a strong HTML, CSS, Javascript, React, Shopify, as well as best practices for web design, development, and hosting.",
         links: {
-          facebook: "",
+          facebook: "https://www.facebook.com/ellis.hogan.1",
           instagram: "https://www.instagram.com/dev.icarus/",
           linkedIn: "https://www.linkedin.com/in/ellis-hogan-99a646161/"
         }
@@ -21,7 +21,7 @@ export default (props) => {
         title: "Co-Founder",
         info: "As a UNCC alumnus, I graduated with a Bachelor of Science in Computer science with a concentration in Software, Systems, and Networks. I have been developing software as a professional for a year.",
         links: {
-          facebook: "",
+          facebook: "https://www.facebook.com/mr.jnc/",
           instagram: "https://www.instagram.com/mr_jnc/",
           linkedIn: "https://www.linkedin.com/in/mrjosephchica/"
         }
