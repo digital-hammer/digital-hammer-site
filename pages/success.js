@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
-
 const Success = (props) => {
 	return (
-		<div>Success</div>
+		<div className="submit-success">
+			<img src="/images/undraw/certification.svg" alt="" />
+		</div>
 	)
 }
 
