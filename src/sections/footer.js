@@ -1,3 +1,6 @@
+import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 export default () => {
   return (
     <section id="footer">
@@ -6,8 +9,8 @@ export default () => {
           <h3>Want a Free Online Quote?</h3>
           <p>Check out our online quote builder, where you can get a free quote for your website in just minutes. Click the button below to get started.</p>
           <ul className="actions">
-          <li><a href="/get-quote" className="button">Get Quote</a></li>
-          <li><a href="/contact-us" className="button">Contact Us</a></li>
+            <li><a href="/get-quote" className="button">Get Quote</a></li>
+            <li><a href="/contact-us" className="button">Contact Us</a></li>
           </ul>
         </section>
         <section>
@@ -16,9 +19,33 @@ export default () => {
             <li className="icon solid fa-phone"><a href="tel:7042751425">(704) 275-1425</a></li>
             <li className="icon solid fa-envelope"><a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a></li>
             <li className="social">
-              <a className="icon brands fa-linkedin" href="https://www.linkedin.com/company/the-digital-hammer/about/?viewAsMember=true"></a>
-              <a className="icon brands fa-facebook" href="https://www.facebook.com/thedigitalhammer/"></a>
-              <a className="icon brands fa-instagram" href="https://www.instagram.com/thedigitalhammer/"></a>
+              <a 
+                className="icon brands" 
+                href={"https://www.facebook.com/thedigitalhammer/"}
+              >
+                <FontAwesomeIcon
+                  size="lg"
+                  icon={faFacebook}
+                />
+              </a>
+              <a 
+                className="icon brands" 
+                href={"https://www.instagram.com/thedigitalhammer/"}
+              >
+                <FontAwesomeIcon
+                  size="lg"
+                  icon={faInstagram}
+                />
+              </a>
+              <a 
+                className="icon brands" 
+                href={"https://www.linkedin.com/company/the-digital-hammer/about/?viewAsMember=true"}
+              >
+                <FontAwesomeIcon
+                  size="lg"
+                  icon={faLinkedin}
+                />
+              </a>
             </li>
           </ul>
         </section>
