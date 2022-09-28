@@ -22,7 +22,7 @@ export default (props) => {
           const link = linkAll || links[el]
           return (
             <a 
-              key={header + idx} 
+              key={"services" + el + idx} 
               className={`service ${link && 'link'}`}
               href={link && `#${el}`}
             >

@@ -10,7 +10,7 @@ export default (props) => {
         if (!services[el]) return console.error(`No services element with name: ${el}.`)
         const { title, bodyFull, image} = services[el]
         return (
-          <section id={el} key={"card" + idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
+          <section id={el} key={"solutions" + el + idx} className={`spotlight ${idx % 2 === 1 && "alt"}`}>
             <div className="image">
               <img src={image} alt="" />
             </div>

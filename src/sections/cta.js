@@ -1,3 +1,5 @@
+import { Fragment } from "react"
+
 export default (props) => {
   const {
     title="Want a Free Quote?",
@@ -13,10 +15,10 @@ export default (props) => {
         <h2>{title}</h2>
         <p>{content.map((el) => {
           return (
-            <>
+            <Fragment key={el}>
               {el}
               <br/>
-            </>
+            </Fragment>
           )
         })}</p>
       </header>
