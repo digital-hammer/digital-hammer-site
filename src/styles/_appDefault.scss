@@ -4035,7 +4035,7 @@ form>.fields>.field.quarter {
 	margin-bottom: 0;
 }
 
-#footer .social .icon {
+#footer .social .icon, #profiles .actions .icon {
 	padding-right: 1em;
 }
 
@@ -4335,8 +4335,7 @@ label.switch {
 		}
 
 		.actions {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			display: flex;
 			align-items: center;
 			padding: 0.5rem 1rem;
 		}
@@ -4365,10 +4364,6 @@ label.switch {
 
 		.content {
 			padding: 2.5em 1.5em 1.5em 1.5em;
-		}
-
-		path {
-			fill: white;
 		}
 
 		.img-portada {
