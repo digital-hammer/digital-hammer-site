@@ -3649,7 +3649,7 @@ body.is-preload #banner footer {
 	background-image: url("/images/overlay.png"), -webkit-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
 	background-image: url("/images/overlay.png"), -ms-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
 	background-image: url("/images/overlay.png"), linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
-	color: $grey;
+	color: $grey-light;
 	-moz-flex-grow: 1;
 	-webkit-flex-grow: 1;
 	-ms-flex-grow: 1;
@@ -3661,16 +3661,16 @@ body.is-preload #banner footer {
 #contact-us form input,
 #contact-us form select,
 #contact-us form textarea {
-	color: $grey;
+	color: $grey-light;
 }
 
 #contact-us form a {
-	color: $grey;
+	color: $grey-light;
 }
 
 #contact-us form strong,
 #contact-us form b {
-	color: $grey;
+	color: $grey-light;
 }
 
 #contact-us form h1,
