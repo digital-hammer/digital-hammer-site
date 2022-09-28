@@ -42,6 +42,9 @@ const AboutUsPage = () => {
               equally ingenuitive.
             </p>
             <h3>Conclusion</h3>
+            <p>
+              
+            </p>
           </div>
         </section>
       </div>
