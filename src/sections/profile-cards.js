@@ -19,7 +19,7 @@ export default (props) => {
         image: "images/profile/ellis.jpg",
         name: "Ellis Hogan",
         title: "Co-Founder, CTO",
-        info: "I'm a self taught developer of 6 years, with skills in all things frontend. I have a strong HTML, CSS, Javascript, React, Shopify, as well as best practices for web design, development, and hosting.",
+        info: "I'm a self taught developer of 6 years with skills in all things frontend. I have a expertise in HTML, CSS, Javascript, React, Shopify, SEO as well as best practices for web design, development, and hosting.",
         links: {
           facebook: "https://www.facebook.com/ellis.hogan.1",
           instagram: "https://www.instagram.com/dev.icarus/",
