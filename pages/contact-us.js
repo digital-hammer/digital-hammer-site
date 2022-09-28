@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
 const ContactUs = (props) => {
-	const submit = (e) => {
-		window.location.href = '/success'
-	}
 	return (
 		<section id="contact-us">
 			<div className="inner">
@@ -40,7 +37,7 @@ const ContactUs = (props) => {
 						</div>
 					</div>
 					<ul className="actions">
-						<li><input name="submit" value="Send Message" className="button large" type="button" onClick={submit} /></li>
+						<li><input name="submit" value="Send Message" className="button large" type="submit" /></li>
 					</ul>
 				</form>
 			</div>
