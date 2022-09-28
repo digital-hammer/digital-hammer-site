@@ -35,7 +35,7 @@ export default (props) => {
         {profiles.map((profile) => {
           const { title, name, image, info, links } = profile || {}
           return (
-            <div className="card" >
+            <div key={name + title} className="card">
               <div className="img-avatar">
                 <img src={image} />
               </div>

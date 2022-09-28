@@ -19,24 +19,24 @@ const ContactUs = (props) => {
 						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
 					</li>
 				</ul>
-				<form netlify name="contact" action="/success" method="POST" data-netlify="true">
+				<form name="contact" action="/success" method="POST" data-netlify="true">
 					<h4>Get in touch</h4>
 					<div className="fields">
 						<div className="field half">
-							<label for="name">Name</label>
+							<label>Name</label>
 							<input name="name" id="name" type="text" placeholder="Name" />
 						</div>
 						<div className="field half">
-							<label for="email">Email</label>
+							<label>Email</label>
 							<input name="email" id="email" type="email" placeholder="Email" />
 						</div>
 						<div className="field">
-							<label for="message">Message</label>
+							<label>Message</label>
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
 					</div>
 					<ul className="actions">
-						<li><input name="submit" value="Send Message" className="button large" type="submit" /></li>
+						<li><input name="submit" value="Send Message" className="button large" type="button" onClick={()=> window.open('/success')} /></li>
 					</ul>
 				</form>
 			</div>
