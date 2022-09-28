@@ -6,7 +6,8 @@ export default () => {
           <h3>Want a Free Online Quote?</h3>
           <p>Check out our online quote builder, where you can get a free quote for your website in just minutes. Click the button below to get started.</p>
           <ul className="actions">
-            <li><a href="/get-quote" className="button">Get Quote</a></li>
+          <li><a href="/get-quote" className="button">Get Quote</a></li>
+          <li><a href="/contact-us" className="button">Contact Us</a></li>
           </ul>
         </section>
         <section>
