@@ -8,7 +8,7 @@ export default (props) => {
         image: "images/profile/joseph.jpg",
         name: "Joseph Chica",
         title: "Co-Founder, CEO",
-        info: "As a UNCC alumnus, I graduated with a Bachelor of Science in Computer science with a concentration in Software, Systems, and Networks. I have been developing software as a professional for a year.",
+        info: "As a UNCC alumnus, I graduated with a Bachelor of Science in Computer science with a concentration in Software, Systems, and Networks. I have been developing software as a professional for several years.",
         links: {
           facebook: "https://www.facebook.com/mr.jnc/",
           instagram: "https://www.instagram.com/mr_jnc/",
