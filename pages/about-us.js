@@ -15,8 +15,7 @@ const AboutUsPage = () => {
               is a web-development company offering ultra-fast websites 
               at low prices. We have something for everyone, from low 
               cost templated websites, to custom design, to eCommerce. 
-              We even offer custom software solutions outside of the web 
-              space. 
+              We also offer custom web solutions outside of these spaces. 
             </p>
             <h3>The Process</h3>
             <p>
@@ -43,7 +42,9 @@ const AboutUsPage = () => {
             </p>
             <h3>Conclusion</h3>
             <p>
-              
+              At The Digital Hammer we take quality very seriously. We promise 
+              a well designed, mobile friendly, fast, quality web solution to 
+              any web service you may need.
             </p>
           </div>
         </section>
