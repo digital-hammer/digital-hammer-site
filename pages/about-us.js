@@ -15,10 +15,9 @@ const AboutUsPage = () => {
               is a web-development company offering ultra-fast websites 
               at low prices. We have something for everyone, from low 
               cost templated websites, to custom design, to eCommerce. 
-              We even offer custom software solutions outside of the web 
-              space. 
+              We also offer custom web solutions outside of these spaces. 
             </p>
-            <h3>Our Process</h3>
+            <h3>The Process</h3>
             <p>
               At The Digital Hammer we use cutting technology and the 
               most up to date web practices to design and develop high 
@@ -30,7 +29,7 @@ const AboutUsPage = () => {
               next.js you can rest assured your websites load and update 
               time is fast. 
             </p>
-            <h3>A Brief History</h3>
+            <h3>Hammer History</h3>
             <p>
               The name Digital Hammer is a reference to Daedalus from Greek 
               mythology. Daedalus (the father of Icarus) was a master builder 
@@ -42,6 +41,11 @@ const AboutUsPage = () => {
               equally ingenuitive.
             </p>
             <h3>Conclusion</h3>
+            <p>
+              At The Digital Hammer we take quality very seriously. We promise 
+              a well designed, mobile friendly, fast, quality web solution to 
+              any web service you may need.
+            </p>
           </div>
         </section>
       </div>
