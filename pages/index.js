@@ -7,7 +7,7 @@ import Parallax from '@/components/parallax'
 const HomePage = (props) => {
   const { width } = props
   return (
-      <div id="main">
+      <div className="container">
         <Parallax width={width} scrollEffect={false}/>
         <Hero />
         <Services />
