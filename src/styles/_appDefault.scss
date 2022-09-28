@@ -3288,29 +3288,29 @@ body.is-preload #banner footer {
 
 /* Main */
 
-#main {
+.container {
 	width: 76em;
 	margin: 0 auto;
 	padding-top: 6em;
 }
 
-#main>* {
+.container>* {
 	margin-bottom: 6em;
 }
 
-#main .default {
+.container .default {
 	background-color: $black;
 }
 
-#main .default .content {
+.container .default .content {
 	padding: 4em 4em 2em 4em;
 }
 
-#main .services {
+.container .services {
 	background-color: $black;
 }
 
-#main .services .content {
+.container .services .content {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -3321,7 +3321,7 @@ body.is-preload #banner footer {
 	flex-wrap: wrap;
 }
 
-#main .services .content .service {
+.container .services .content .service {
 	padding: 4em 3em 2em 3em;
 	width: 33.333333333%;
 	border-style: solid;
@@ -3362,15 +3362,15 @@ body.is-preload #banner footer {
 
 }
 
-#main .services .content .service:nth-child(-n + 3) {
+.container .services .content .service:nth-child(-n + 3) {
 	border-top-width: 0;
 }
 
-#main .services .content .service:nth-child(3n - 2) {
+.container .services .content .service:nth-child(3n - 2) {
 	border-left-width: 0;
 }
 
-#main .spotlight {
+.container .spotlight {
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -3384,49 +3384,49 @@ body.is-preload #banner footer {
 
 }
 
-#main .spotlight .image {
+.container .spotlight .image {
 	width: 33.333333333%;
 	min-height: 100%;
 	background-color: $grey;
 	padding: 2em 1em;
 }
 
-#main .spotlight .image img {
+.container .spotlight .image img {
 	width: 100%;
 }
 
-#main .spotlight .content {
+.container .spotlight .content {
 	padding: 4em 4em 2em 4em;
 	width: 66.666666666%;
 }
 
-#main .spotlight.alt {
+.container .spotlight.alt {
 	-moz-flex-direction: row-reverse;
 	-webkit-flex-direction: row-reverse;
 	-ms-flex-direction: row-reverse;
 	flex-direction: row-reverse;
 }
 
-#main .cta {
+.container .cta {
 	text-align: center;
 }
 
-#main .cta h2:after {
+.container .cta h2:after {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#main .cta p {
+.container .cta p {
 	margin-top: 0;
 }
 
 @media screen and (max-width: 1680px) {
 
-	#main {
+	.container {
 		padding-top: 4.5em;
 	}
 
-	#main>* {
+	.container>* {
 		margin-bottom: 4.5em;
 	}
 
@@ -3434,28 +3434,28 @@ body.is-preload #banner footer {
 
 @media screen and (max-width: 1280px) {
 
-	#main {
+	.container {
 		width: calc(100% - 6em);
 		padding-top: 3em;
 	}
 
-	#main>* {
+	.container>* {
 		margin-bottom: 3em;
 	}
 
-	#main .default .content {
+	.container .default .content {
 		padding: 3em 3em 1em 3em;
 	}
 
-	#main .services .content .service {
+	.container .services .content .service {
 		padding: 3em 2em 1em 2em;
 	}
 
-	#main .spotlight .content {
+	.container .spotlight .content {
 		padding: 3em 3em 1em 3em;
 	}
 
-	#main .cta {
+	.container .cta {
 		padding: 1em 0 0.1em 0;
 	}
 
@@ -3463,37 +3463,37 @@ body.is-preload #banner footer {
 
 @media screen and (max-width: 980px) {
 
-	#main .services .content {
+	.container .services .content {
 		display: block;
 	}
 
-	#main .services .content .service {
+	.container .services .content .service {
 		width: 100%;
 		border-left: 0;
 		border-top: solid 1px $grey-dark  !important;
 	}
 
-	#main .services .content .service:first-child {
+	.container .services .content .service:first-child {
 		border-top: 0 !important;
 	}
 
-	#main .spotlight {
+	.container .spotlight {
 		display: block;
 		scroll-margin-top: 15vh;
 	}
 
-	#main .spotlight .image {
+	.container .spotlight .image {
 		width: 100%;
 		overflow: hidden;
 	}
 
-	#main .spotlight .image img {
+	.container .spotlight .image img {
 		width: 60%;
 		height: 60%;
 		margin: auto;
 	}
 
-	#main .spotlight .content {
+	.container .spotlight .content {
 		width: 100%;
 	}
 
@@ -3501,44 +3501,44 @@ body.is-preload #banner footer {
 
 @media screen and (max-width: 736px) {
 
-	#main {
+	.container {
 		width: 100%;
 		padding-top: 0;
 	}
 
-	#main>* {
+	.container>* {
 		margin-bottom: 0;
 	}
 
-	#main .default .content {
+	.container .default .content {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .services .content .service {
+	.container .services .content .service {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .spotlight .content {
+	.container .spotlight .content {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .spotlight .content h2:after {
+	.container .spotlight .content h2:after {
 		margin-left: 0;
 		margin-right: 0;
 	}
 
-	#main .spotlight .image {
+	.container .spotlight .image {
 		width: 100%;
 		overflow: hidden;
 	}
 
-	#main .spotlight .image img {
+	.container .spotlight .image img {
 		width: 80%;
 		height: 80%;
 		margin: auto;
 	}
 
-	#main .cta {
+	.container .cta {
 		padding: 4em 1.5em 2em 1.5em;
 		background-color: $grey;
 		background-image: url("/images/overlay.png"), url("/images/bg.jpg");
@@ -4294,16 +4294,16 @@ label.switch {
 }
 
 #profiles {
-	font-family: Roboto, sans-serif;
-	margin: 0;
-	padding: 5em 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
 	background-image: -moz-linear-gradient(225deg, $primary 0%, $secondary 85%);
 	background-image: -webkit-linear-gradient(225deg, $primary 0%, $secondary 85%);
 	background-image: -ms-linear-gradient(225deg, $primary 0%, $secondary 85%);
 	background-image: linear-gradient(225deg, $primary 0%, $secondary 85%);
+	
+	.inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
 
 	.card {
 		background: $grey-dark;

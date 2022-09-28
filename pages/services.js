@@ -5,7 +5,7 @@ import Solutions from '@/sections/solutions'
 const ServicesPage = () => {
   const options = ["hosting", "cms", "ssl", "efficient", "custom", "shopify"]
   return (
-    <div id="main">
+    <div className="container">
         <Services 
           header="Our Services" 
           subheader="Great development at an even better price"
