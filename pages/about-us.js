@@ -18,7 +18,7 @@ const AboutUsPage = () => {
               We even offer custom software solutions outside of the web 
               space. 
             </p>
-            <h3>Our Process</h3>
+            <h3>The Process</h3>
             <p>
               At The Digital Hammer we use cutting technology and the 
               most up to date web practices to design and develop high 
@@ -30,7 +30,7 @@ const AboutUsPage = () => {
               next.js you can rest assured your websites load and update 
               time is fast. 
             </p>
-            <h3>A Brief History</h3>
+            <h3>Hammer History</h3>
             <p>
               The name Digital Hammer is a reference to Daedalus from Greek 
               mythology. Daedalus (the father of Icarus) was a master builder 
