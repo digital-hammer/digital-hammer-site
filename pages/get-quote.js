@@ -6,11 +6,12 @@ const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();
 	const [position, setPosition] = useState(0);
+	const [currentForm, setCurrentForm] = useState('first')
 	const [definition, setDefinition] = useState("");
 	const [lineItems, setLineItems] = useState({});
 	const [totalPrice, setTotalPrice] = useState(0);
 	const next = () => {
-		if (position < forms.length) {
+		if (position < Object.keys(formData).length) {
 			setPosition(position + 1);
 			setDefinition("");
 		}
@@ -41,13 +42,12 @@ const GetQuote = (props) => {
 		setDefinition(definition)
 		lineItems.map((val, key)=> updatePrice(key, val));
 	}
-	console.log(formData.options)
 	return (
 		<div id="quote-machine">
 			<div className="inner">
 				<div id="quote-builder">
-					{formData[position].header && <h4>{formData[position].header}</h4>}
-					<QuoteCard options={formData[position].options} onChange={onQuoteCardChange} />
+					{formData[currentForm].header && <h4>{formData[currentForm].header}</h4>}
+					<QuoteCard options={formData[currentForm].options} onChange={onQuoteCardChange} />
 					<div className="definition">
 						{definition}
 					</div>
@@ -56,7 +56,7 @@ const GetQuote = (props) => {
 					</h4>
 					<div className="">
 						{position !== 0 && <button onClick={prev}>Previous</button>}
-						{position !== formData.length - 1 && <button onClick={next}>Next</button>}
+						{position !== Object.keys(formData).length - 1 && <button onClick={next}>Next</button>}
 					</div>
 				</div>
 			<PriceBox lineItems={lineItems} total={totalPrice} />
