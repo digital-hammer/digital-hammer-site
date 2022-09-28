@@ -2155,6 +2155,7 @@ select option {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="tel"],
 select {
 	height: 3.25em;
 }
@@ -3762,6 +3763,7 @@ body.is-preload #banner footer {
 #contact-us form input[type="text"],
 #contact-us form input[type="password"],
 #contact-us form input[type="email"],
+#contact-us form input[type="tel"],
 #contact-us form select,
 #contact-us form textarea {
 	background-color: rgba(0, 0, 0, 0.065);
@@ -3771,6 +3773,7 @@ body.is-preload #banner footer {
 #contact-us form input[type="text"]:focus,
 #contact-us form input[type="password"]:focus,
 #contact-us form input[type="email"]:focus,
+#contact-us form input[type="tel"]:focus,
 #contact-us form select:focus,
 #contact-us form textarea:focus {
 	border-color: $white;
@@ -4035,7 +4038,8 @@ form>.fields>.field.quarter {
 	margin-bottom: 0;
 }
 
-#footer .social .icon, #profiles .actions .icon {
+#footer .social .icon,
+#profiles .actions .icon {
 	padding-right: 1em;
 }
 
@@ -4298,7 +4302,7 @@ label.switch {
 	background-image: -webkit-linear-gradient(225deg, $primary 0%, $secondary 85%);
 	background-image: -ms-linear-gradient(225deg, $primary 0%, $secondary 85%);
 	background-image: linear-gradient(225deg, $primary 0%, $secondary 85%);
-	
+
 	.inner {
 		display: flex;
 		align-items: stretch;
@@ -4383,10 +4387,11 @@ label.switch {
 
 @media screen and (max-width: 980px) {
 
-	#profiles{
-		 .inner {
+	#profiles {
+		.inner {
 			flex-direction: column;
 			padding: 1em 2em;
+
 			.card {
 				width: 100%;
 				margin: 1em auto;
@@ -4402,6 +4407,7 @@ label.switch {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	img {
 		position: relative;
 		width: 80%;
