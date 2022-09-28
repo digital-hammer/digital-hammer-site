@@ -36,7 +36,7 @@ const ContactUs = (props) => {
 						</div>
 					</div>
 					<ul className="actions">
-						<li><input value="Send Message" className="button large" type="submit" /></li>
+						<li><input name="submit" value="Send Message" className="button large" type="submit" /></li>
 					</ul>
 				</form>
 			</div>
