@@ -3465,6 +3465,7 @@ body.is-preload #banner footer {
 
 	#main .spotlight {
 		display: block;
+		scroll-margin-top: 15vh;
 	}
 
 	#main .spotlight .image {
@@ -3473,8 +3474,8 @@ body.is-preload #banner footer {
 	}
 
 	#main .spotlight .image img {
-		width: 80%;
-		height: 80%;
+		width: 60%;
+		height: 60%;
 		margin: auto;
 	}
 
@@ -3503,10 +3504,6 @@ body.is-preload #banner footer {
 		padding: 3em 1.5em 1em 1.5em;
 	}
 
-	#main .spotlight {
-		scroll-margin-top: 20vh;
-	}
-
 	#main .spotlight .content {
 		padding: 3em 1.5em 1em 1.5em;
 	}
@@ -3514,6 +3511,17 @@ body.is-preload #banner footer {
 	#main .spotlight .content h2:after {
 		margin-left: 0;
 		margin-right: 0;
+	}
+
+	#main .spotlight .image {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	#main .spotlight .image img {
+		width: 80%;
+		height: 80%;
+		margin: auto;
 	}
 
 	#main .cta {
