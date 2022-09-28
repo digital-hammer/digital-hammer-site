@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 
 const ContactUs = (props) => {
+	const submit = (e) => {
+		window.location.href = '/success'
+	}
 	return (
 		<section id="contact-us">
 			<div className="inner">
@@ -20,6 +23,7 @@ const ContactUs = (props) => {
 					</li>
 				</ul>
 				<form name="contact" action="/success" method="POST" data-netlify="true">
+					<input type="hidden" name="contact" value="contact-form" />
 					<h4>Get in touch</h4>
 					<div className="fields">
 						<div className="field half">
@@ -36,7 +40,7 @@ const ContactUs = (props) => {
 						</div>
 					</div>
 					<ul className="actions">
-						<li><input name="submit" value="Send Message" className="button large" type="button" onClick={()=> window.open('/success')} /></li>
+						<li><input name="submit" value="Send Message" className="button large" type="button" onClick={submit} /></li>
 					</ul>
 				</form>
 			</div>
