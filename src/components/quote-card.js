@@ -1,60 +1,70 @@
 export default (props) => {
   const {
-    options=[],
-    onChange
+    questions = [],
+    header=false,
+    onChange,
   } = props || {}
 
   return (
-    <form>
-      {options.map((item) => {
+    <form id="quote-machine">
+      {header && <h4>{header}</h4>}
+      {questions.map((item) => {
         const {
-          type = "",
-          data
+          question = "",
+          options
         } = item;
-        switch (type.toLowerCase()) {
-          case "select": {
-            const {name, options} = data
-            return (
-              <select name={name} onChange={(e) => onChange({})}>
-                {options.map((el)=> {
-                  <option value={el.value}>{el.value}</option>
-                })}
-              </select>
-            )
-          }
+        return (
+          <>
+            <label>{question}</label>
+            {options.map((data) => {
+              const {type} = data
+              switch (type.toLowerCase()) {
+                case "select": {
+                  const { name, options } = data
+                  return (
+                    <select name={name} onChange={(e) => onChange({})}>
+                      {options.map((el) => {
+                        <option value={el.value}>{el.value}</option>
+                      })}
+                    </select>
+                  )
+                }
 
-          case "date": {
+                case "date": {
 
-            return <input />
-          }
+                  return <input />
+                }
 
 
-          case "radio": {
+                case "radio": {
 
-            return (
-              <label className="switch">
-                <input type="checkbox" />
-                <span className="slider round"></span>
-              </label>
-            )
-          }
-          
-          case 'service box': {
+                  return (
+                    <label className="switch">
+                      <input type="checkbox" />
+                      <span className="slider round"></span>
+                    </label>
+                  )
+                }
 
-            return (
-              <div className="service-box">
+                case 'button-full': {
+                  const {text} = data
+                  return (
+                    <button className="full">
+                      {text}
+                    </button>
+                  )
 
-              </div>
-            )
+                }
 
-          }
+                case "text":
+                default: {
 
-          case "text":
-          default: {
-
-            return <input />
-          }
-        }
+                  return <input />
+                }
+              }
+            })}
+          </>
+        )
       })}
     </form>
   )

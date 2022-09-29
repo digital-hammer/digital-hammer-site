@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import PriceBox from '@/components/price-box'
 import QuoteCard from '@/components/quote-card'
+import PositionHolder from '@/components/position-holder'
 import formData from '@/data/quote-form'
 const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();
 	const [position, setPosition] = useState(0);
-	const [currentForm, setCurrentForm] = useState('first')
+	const [currentForm, setCurrentForm] = useState('single')
 	const [definition, setDefinition] = useState("");
 	const [lineItems, setLineItems] = useState({});
 	const [totalPrice, setTotalPrice] = useState(0);
@@ -24,6 +25,13 @@ const GetQuote = (props) => {
 		}
 	}
 
+	const finish = () => {
+		if (position < Object.keys(formData).length) {
+			setPosition(position + 1);
+			setDefinition("");
+		}
+	}
+
 	const changeInfo = (newInfo, el, def) => {
 		let updatedInfo = { ...info }
 		updatedInfo[el] = { ...newInfo }
@@ -31,35 +39,33 @@ const GetQuote = (props) => {
 		setDefinition(def)
 	}
 
-	const updatePrice = (key, val=0) => {
-		const n = {...lineItems}
+	const updatePrice = (key, val = 0) => {
+		const n = { ...lineItems }
 		val === 0 ? delete n[key] : n[key] = val
 		setLineItems(n)
-		setTotalPrice(Object.values(n).reduce((a, b)=> a + b))
+		setTotalPrice(Object.values(n).reduce((a, b) => a + b))
 	}
-	
-	const onQuoteCardChange = ({definition, lineItems}) => {
+
+	const onQuoteCardChange = ({ definition, lineItems }) => {
 		setDefinition(definition)
-		lineItems.map((val, key)=> updatePrice(key, val));
+		lineItems.map((val, key) => updatePrice(key, val));
 	}
 	return (
-		<div id="quote-machine">
-			<div className="inner">
-				<div id="quote-builder">
-					{formData[currentForm].header && <h4>{formData[currentForm].header}</h4>}
-					<QuoteCard options={formData[currentForm].options} onChange={onQuoteCardChange} />
+		<div id="quote-section">
+			<PositionHolder />
+			<div id="quote-builder">
+				<div className="card">
+					<QuoteCard questions={formData[position].questions} onChange={onQuoteCardChange} />
 					<div className="definition">
 						{definition}
 					</div>
-					<h4 className="step">
-						Step {position + 1} of {formData.length}
-					</h4>
-					<div className="">
-						{position !== 0 && <button onClick={prev}>Previous</button>}
-						{position !== Object.keys(formData).length - 1 && <button onClick={next}>Next</button>}
+
+					<div className="position-buttons">
+						{position > 0 && <button onClick={prev}>Previous</button>}
+						{position !== formData.length - 1 ? <button onClick={next}>Next</button> : <button onClick={finish}>Finish</button>}
 					</div>
 				</div>
-			<PriceBox lineItems={lineItems} total={totalPrice} />
+				<PriceBox lineItems={lineItems} total={totalPrice} />
 			</div>
 		</div>
 	);
