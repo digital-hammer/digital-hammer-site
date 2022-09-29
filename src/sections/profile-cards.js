@@ -7,7 +7,7 @@ export default (props) => {
       {
         image: "images/profile/joseph.jpg",
         name: "Joseph Chica",
-        title: "Co-Founder, CEO",
+        title: "Co-Owner, CEO",
         info: "As a UNCC alumnus, I graduated with a Bachelor of Science in Computer science with a concentration in Software, Systems, and Networks. I have been developing software as a professional for several years.",
         links: {
           facebook: "https://www.facebook.com/mr.jnc/",
@@ -18,8 +18,8 @@ export default (props) => {
       {
         image: "images/profile/ellis.jpg",
         name: "Ellis Hogan",
-        title: "Co-Founder, CTO",
-        info: "I'm a self taught developer of 6 years with skills in all things frontend. I have a expertise in HTML, CSS, Javascript, React, Shopify, SEO as well as best practices for web design, development, and hosting.",
+        title: "Co-Owner, CTO",
+        info: "I'm a self taught developer of 6 years with skills in all things frontend. I have a expertise in Javascript, React, HTML, CSS, Shopify, SEO as well as best practices for web design, development, and hosting.",
         links: {
           facebook: "https://www.facebook.com/ellis.hogan.1",
           instagram: "https://www.instagram.com/dev.icarus/",
