@@ -3566,7 +3566,6 @@ body.is-preload #banner footer {
 		margin: 0 auto 3em;
 		max-width: 75em;
 		width: calc(100% - 4em);
-		background-color: $grey-darker;
 		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
 	}
 }
@@ -3577,6 +3576,7 @@ body.is-preload #banner footer {
 	margin-bottom: 0;
 	width: 35%;
 	color: $secondary-light;
+	background-color: $grey-darker;
 
 	a {
 		color: $secondary-light;
