@@ -1,19 +1,24 @@
-export default {
-  first: {
-    header: "What type of service are you looking for?",
-    options: [
+export default [
+  {
+    questions: [
       {
-        type: 'service box',
-        text: 'Website'
-      },
-      {
-        type: 'service box',
-        text: 'Website'
-      },
-      {
-        type: 'service box',
-        text: 'Website'
-      }
-    ]
+        question: "What type of service are you looking for?",
+        options: [
+          {
+            type: 'button-full',
+            text: 'Website'
+          },
+          {
+            type: 'button-full',
+            text: 'eCommerce'
+          },
+        ]
+      }]
+  },
+  {
+
+  },
+  {
+
   }
-}
+]

@@ -2551,6 +2551,8 @@ ul.icons li .icon:before {
 ul.contact {
 	list-style: none;
 	padding: 0;
+	background-color: $grey-darker;
+	color: $secondary-light;
 }
 
 ul.contact li {
@@ -2574,10 +2576,6 @@ ul.contact li:before {
 ul.contact li:before {
 	display: inline-block;
 	width: 2.1em;
-}
-
-ul.contact li:first-child {
-	padding-top: 0;
 }
 
 /* Section/Article */
@@ -3551,16 +3549,6 @@ body.is-preload #banner footer {
 
 }
 
-#quote-machine {
-	background-image: url("/images/header-bg.svg"), -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
-	background-image: url("/images/header-bg.svg"), -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
-	background-image: url("/images/header-bg.svg"), -ms-linear-gradient(45deg, $primary 20%, $secondary 80%);
-	background-image: url("/images/header-bg.svg"), linear-gradient(45deg, $primary 20%, $secondary 80%);
-	background-attachment: fixed;
-	background-position: 100% 25%;
-	padding: 4.5em 0 2em;
-}
-
 #contact-us {
 	background-image: url("/images/header-bg.svg"), -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
 	background-image: url("/images/header-bg.svg"), -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
@@ -3571,8 +3559,7 @@ body.is-preload #banner footer {
 	padding: 4.5em 0 2em;
 }
 
-#contact-us,
-#quote-machine {
+#contact-us {
 	>.inner {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3581,42 +3568,41 @@ body.is-preload #banner footer {
 		margin: 0 auto 3em;
 		max-width: 75em;
 		width: calc(100% - 4em);
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
 	}
 }
 
-#contact-us .contact,
-#quote-machine #price-box {
-	padding: 4em 2.5em 2em 2.5em;
-	background-color: rgba(255, 255, 255, .8);
+#contact-us .contact {
+	padding: 1.55em 2.5em 2em 2.5em;
 	list-style-type: none;
 	margin-bottom: 0;
 	width: 35%;
-	color: $primary-dark;
+	color: $secondary-light;
 
 	a {
-		color: $primary-dark;
-		border-color: $primary-light;
+		color: $secondary-light;
+		border-color: $secondary-light;
 	}
 
 	li {
-		margin-bottom: 2em;
+		margin-top: 2em;
 		padding-bottom: 2em;
 		padding-left: 4em;
 		position: relative;
 	}
 
 	li strong {
-		color: $primary;
+		color: $secondary;
 		display: block;
 		margin-bottom: 0.5em;
 		text-transform: uppercase;
 	}
 
 	li.icon:before {
-		color: $secondary-o50;
+		color: $secondary;
 		position: absolute;
 		left: 0;
-		top: 0.25em;
+		top: .75em;
 		font-size: 1.25em;
 	}
 
@@ -3643,8 +3629,7 @@ body.is-preload #banner footer {
 	}
 }
 
-#contact-us form,
-#quote-machine #quote-builder {
+#contact-us form {
 	background-image: url("/images/overlay.png"), -moz-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
 	background-image: url("/images/overlay.png"), -webkit-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
 	background-image: url("/images/overlay.png"), -ms-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
@@ -4439,4 +4424,200 @@ label.switch {
 	h3 {
 		font-size: 30px;
 	}
+}
+
+#quote-section {
+	background-image: url("/images/header-bg.svg"), -moz-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), -webkit-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), -ms-linear-gradient(45deg, $primary 20%, $secondary 80%);
+	background-image: url("/images/header-bg.svg"), linear-gradient(225deg, $primary 20%, $secondary 80%);
+	background-attachment: fixed;
+	background-position: 100% 25%;
+	padding: 4.5em 0 2em;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+
+	#quote-builder {
+		background-color: $grey-darker;
+		display: flex;
+		margin: 0 auto 3em;
+		max-width: 75em;
+		width: calc(100% - 4em);
+		padding: .5em;
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+
+		.card {
+			flex: 1 1 66%;
+			padding: .5em;
+
+			#quote-machine {
+				min-height: 200px;
+				color: $primary-light;
+
+				label {
+					font-size: 20px;
+				}
+
+				.full {
+					width: 100%;
+					margin: 10px auto;
+				}
+
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p {
+					color: $primary-light;
+				}
+			}
+
+			.position-buttons {
+				display: flex;
+				justify-content: end;
+
+				button {
+					margin-left: 1em;
+				}
+			}
+		}
+
+		#price-box {
+			flex: 1 1 33%;
+			padding: .5em;
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+			justify-content: end;
+
+			hr {
+				width: 90%;
+				margin: 1em 0;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p {
+				color: $secondary-light;
+			}
+		}
+	}
+
+	#position-holder {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 3em;
+		width: 100%;
+
+		.position-line {
+			width: 50px;
+			height: 3px;
+			background-color: $grey-light;
+			margin: 7px 0;
+			position: relative;
+
+			&::after {
+				content: "";
+				transition: 300ms;
+				transition-delay: 100ms;
+				background-color: $grey-darker;
+				width: 0px;
+				position: absolute;
+				z-index: 2;
+				height: 3px;
+				top: 0;
+				left: 0;
+			}
+
+			&.filled {
+				&::after {
+					width: 50px;
+					transition-delay: 0ms;
+				}
+			}
+		}
+
+		.position-dot {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: $grey-light;
+			position: relative;
+
+			&::after {
+				content: "";
+				transition: 300ms;
+				transition-delay: 0ms;
+				background-color: $grey-darker;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 2;
+				border-radius: 50%;
+			}
+
+			&.filled {
+				&::after {
+					transition-delay: 100ms;
+					width: 16px;
+					height: 16px;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 980px) {
+
+	#quote-machine {
+
+		.card {
+			flex-direction: column-reverse;
+
+			#quote-builder {
+				flex: 1 1 100%;
+
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p {
+					color: $primary-light;
+				}
+
+				display: flex;
+				flex-direction: column;
+			}
+
+
+
+			#price-box {
+				flex: 1 1 100%;
+
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p {
+					color: $secondary-light;
+				}
+			}
+		}
+	}
+
 }
