@@ -12,7 +12,7 @@ export default () => {
   return (
     <div id="coming-soon">
       <h2>Coming Soon</h2>
-      <h3>{(count / (60 * 60 * 24)).toFixed(0)} : {(count / (60 * 60) % 24).toFixed(0) - 1} : {(count / 60 % 60).toFixed(0)} : {count % 60}</h3>
+      <h3>{(count / (60 * 60 * 24)).toFixed(0)} : {(count / (60 * 60) % 24).toFixed(0)} : {(count / 60 % 60).toFixed(0)} : {count % 60}</h3>
     </div>
   )
 }

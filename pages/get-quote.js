@@ -59,7 +59,7 @@ const GetQuote = (props) => {
 				<div className="card">
 					{position !== formData.length 
 						? <QuoteCard questions={formData[position].questions} onChange={onQuoteCardChange} />
-						: <ContactForm />
+						:  <ContactForm />
 					}
 					<div className="definition">
 						{definition}

@@ -2551,6 +2551,8 @@ ul.icons li .icon:before {
 ul.contact {
 	list-style: none;
 	padding: 0;
+	background-color: $grey-darker;
+	color: $secondary-light;
 }
 
 ul.contact li {
@@ -2574,10 +2576,6 @@ ul.contact li:before {
 ul.contact li:before {
 	display: inline-block;
 	width: 2.1em;
-}
-
-ul.contact li:first-child {
-	padding-top: 0;
 }
 
 /* Section/Article */
@@ -3570,40 +3568,41 @@ body.is-preload #banner footer {
 		margin: 0 auto 3em;
 		max-width: 75em;
 		width: calc(100% - 4em);
+		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
 	}
 }
 
 #contact-us .contact {
-	padding: 4em 2.5em 2em 2.5em;
+	padding: 1.55em 2.5em 2em 2.5em;
 	list-style-type: none;
 	margin-bottom: 0;
 	width: 35%;
-	color: $primary-dark;
+	color: $secondary-light;
 
 	a {
-		color: $primary-dark;
-		border-color: $primary-light;
+		color: $secondary-light;
+		border-color: $secondary-light;
 	}
 
 	li {
-		margin-bottom: 2em;
+		margin-top: 2em;
 		padding-bottom: 2em;
 		padding-left: 4em;
 		position: relative;
 	}
 
 	li strong {
-		color: $primary;
+		color: $secondary;
 		display: block;
 		margin-bottom: 0.5em;
 		text-transform: uppercase;
 	}
 
 	li.icon:before {
-		color: $secondary-o50;
+		color: $secondary;
 		position: absolute;
 		left: 0;
-		top: 0.25em;
+		top: .75em;
 		font-size: 1.25em;
 	}
 

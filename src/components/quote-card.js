@@ -1,3 +1,5 @@
+import cx from 'classnames'
+
 export default (props) => {
   const {
     questions = [],
@@ -46,14 +48,18 @@ export default (props) => {
                   )
                 }
 
-                case 'button-full': {
+                case "button-full": {
                   const {text} = data
                   return (
-                    <button className="full">
-                      {text}
-                    </button>
+                    <input className="full" type="button" value={text} />
                   )
+                }
 
+                case "multi-select": {
+                  const {text} = data
+                  return (
+                    <input className={cx("full", )} type="button" value={text} />
+                  )
                 }
 
                 case "text":
