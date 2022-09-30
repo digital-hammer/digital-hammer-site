@@ -3,11 +3,12 @@ import PriceBox from '@/components/price-box'
 import QuoteCard from '@/components/quote-card'
 import PositionHolder from '@/components/position-holder'
 import formData from '@/data/quote-form'
+import ContactForm from 'src/components/contact-form'
+
 const GetQuote = (props) => {
 
 	const [info, setInfo] = useState();
 	const [position, setPosition] = useState(0);
-	const [currentForm, setCurrentForm] = useState('single')
 	const [definition, setDefinition] = useState("");
 	const [lineItems, setLineItems] = useState({});
 	const [totalPrice, setTotalPrice] = useState(0);
@@ -52,17 +53,21 @@ const GetQuote = (props) => {
 	}
 	return (
 		<div id="quote-section">
-			<PositionHolder />
+			<h4>Step {position+1} of {formData.length+1}</h4>
+			<PositionHolder total={formData.length+1} current={position} />
 			<div id="quote-builder">
 				<div className="card">
-					<QuoteCard questions={formData[position].questions} onChange={onQuoteCardChange} />
+					{position !== formData.length 
+						? <QuoteCard questions={formData[position].questions} onChange={onQuoteCardChange} />
+						: <ContactForm />
+					}
 					<div className="definition">
 						{definition}
 					</div>
 
 					<div className="position-buttons">
 						{position > 0 && <button onClick={prev}>Previous</button>}
-						{position !== formData.length - 1 ? <button onClick={next}>Next</button> : <button onClick={finish}>Finish</button>}
+						{position !== formData.length ? <button onClick={next}>Next</button> : <button onClick={finish}>Finish</button>}
 					</div>
 				</div>
 				<PriceBox lineItems={lineItems} total={totalPrice} />

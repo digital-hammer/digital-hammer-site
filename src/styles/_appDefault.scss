@@ -4439,6 +4439,7 @@ label.switch {
 	justify-content: center;
 	align-items: center;
 	display: flex;
+	flex-direction: column;
 
 	#quote-builder {
 		background-color: $grey-darker;
@@ -4465,7 +4466,7 @@ label.switch {
 					width: 100%;
 					margin: 10px auto;
 				}
-				
+
 				h2,
 				h3,
 				h4,
@@ -4510,12 +4511,72 @@ label.switch {
 		}
 	}
 
-	.position-dot {
+	#position-holder {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 3em;
+		width: 100%;
 
-	}
+		.position-line {
+			width: 50px;
+			height: 3px;
+			background-color: $grey-light;
+			margin: 7px 0;
+			position: relative;
 
-	.posiition-line {
+			&::after {
+				content: "";
+				transition: 300ms;
+				transition-delay: 100ms;
+				background-color: $grey-darker;
+				width: 0px;
+				position: absolute;
+				z-index: 2;
+				height: 3px;
+				top: 0;
+				left: 0;
+			}
 
+			&.filled {
+				&::after {
+					width: 50px;
+					transition-delay: 0ms;
+				}
+			}
+		}
+
+		.position-dot {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: $grey-light;
+			position: relative;
+
+			&::after {
+				content: "";
+				transition: 300ms;
+				transition-delay: 0ms;
+				background-color: $grey-darker;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 2;
+				border-radius: 50%;
+			}
+
+			&.filled {
+				&::after {
+					transition-delay: 100ms;
+					width: 16px;
+					height: 16px;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
 	}
 }
 
