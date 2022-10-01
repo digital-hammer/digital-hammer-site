@@ -9,7 +9,7 @@ export default (props) => {
 	return (
       <form name={form} action="/success" method="POST" data-netlify="true">
         <input type="hidden" name={form} value={form} />
-        {additionalInfo && <textarea className="hidden" value={JSON.stringify(additionalInfo)} />}
+
         <div className="fields">
           <div className="field half">
             <label>Name</label>
