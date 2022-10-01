@@ -4,6 +4,7 @@ import Header from '@/sections/header'
 import Footer from '@/sections/footer'
 import '@/styles/_appDefault.scss'
 import '@/styles/fontawesome-all.min.css'
+import ReactGA from 'react-ga4'
 
 function MyApp({ Component, pageProps }) {
   const [width, setWidth] = useState(0)
@@ -14,6 +15,9 @@ function MyApp({ Component, pageProps }) {
     return () => window.removeEventListener('resize', w)
   }, [width])
 
+  //TODO: make it secret in another file not on github
+  ReactGA.initialize('G-2Y2FRNEXNL')
+  ReactGA.send("pageview")
   return (
     <>
       <Head>
