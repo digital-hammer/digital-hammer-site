@@ -7,7 +7,6 @@ import Design from '@/components/quote/design'
 import Pages from '@/components/quote/pages'
 import Content from '@/components/quote/content'
 import Programming from '@/components/quote/programming'
-import SEO from '@/components/quote/seo'
 import ContactForm from '@/components/contact-form'
 
 const GetQuote = (props) => {
@@ -69,7 +68,6 @@ const GetQuote = (props) => {
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
-		<SEO currentValues={selections.seo} onChange={changeSelections} />,
 		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="quote" />
 	]
 

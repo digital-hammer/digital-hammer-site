@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from 'react'
 import ContactForm from 'src/components/contact-form'
 
 const ContactUs = (props) => {
