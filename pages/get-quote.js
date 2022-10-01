@@ -16,6 +16,7 @@ const GetQuote = (props) => {
 	const [definition, setDefinition] = useState("")
 	const [linePrices, setLinePrices] = useState({})
 	const [totalPrice, setTotalPrice] = useState(0)
+	const [formattedInfo, setFormattedInfo] = useState(0)
 
 	useEffect(() => {
 		for (let section in quoteData) {
@@ -26,19 +27,14 @@ const GetQuote = (props) => {
 		}
 	}, [])
 
-	const next = () => {
-		if (position < forms.length) {
-			setPosition(position + 1)
+	const changePosition = (p) => {
+			setPosition(p)
 			setDefinition("");
-		}
+			updateInfo()
 	}
 
-	const prev = () => {
-		if (position > 0) {
-			setPosition(position - 1)
-			setDefinition("");
-		}
-	}
+	const next = () => changePosition(position + 1)
+	const prev = () => changePosition(position - 1)
 
 	const changeSelections = (section, key, newValue, fullUpdate = true) => {
 		selections[section][key] = newValue
@@ -58,9 +54,28 @@ const GetQuote = (props) => {
 				.map(([_, val]) => val.price)
 			n[section] = val.length > 0 ? val.reduce((a, b) => a + b) : 0
 		})
-		console.log(n)
 		setLinePrices(n)
 		setTotalPrice(Object.values(n).reduce((a, b) => a + b))
+	}
+
+	const updateInfo = () => {
+		let items = {
+			pricing: {
+				...linePrices,
+				totalPrice
+			}
+		}
+		Object.entries(selections).forEach(([k, v])=> {
+			return `\t${k}: ${v}\n`
+		})
+
+		setFormattedInfo(Object.entries(items).map(([key, val])=> {
+			let str = `${key}: \n`
+			Object.entries(val).forEach(([k, v])=> {
+				str+= `\t${k}: ${v}\n`
+			})
+			return str
+		}))
 	}
 
 	const forms = [
@@ -80,8 +95,8 @@ const GetQuote = (props) => {
 				<div className="card">
 					<form name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote"value="quote" />
-						<textarea className="hidden" name="additional info" value={JSON.stringify({ selections, linePrices, totalPrice })} />
 						{forms[position]}
+						<textarea className="hidden" name="additional info" value={formattedInfo} />
 						<div className="definition">
 							{definition}
 						</div>
