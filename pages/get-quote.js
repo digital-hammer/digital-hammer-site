@@ -40,7 +40,7 @@ const GetQuote = (props) => {
 	}
 
 	const next = () => {
-		checkCurrentFields()
+		//checkCurrentFields()
 		changePosition(position + 1)
 	}
 
