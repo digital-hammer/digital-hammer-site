@@ -1,5 +1,3 @@
-import ContactForm from 'src/components/contact-form'
-
 const ContactUs = (props) => {
 	return (
 		<section id="contact-us">
@@ -8,7 +6,7 @@ const ContactUs = (props) => {
 					<li className="icon solid fa-home">
 						<strong>Address</strong>
 						305 Bay St.<br />
-            Monroe, NC 28079
+						Monroe, NC 28079
 					</li>
 					<li className="icon solid fa-phone">
 						<strong>Phone</strong>
@@ -21,7 +19,30 @@ const ContactUs = (props) => {
 				</ul>
 				<div className="form">
 					<h4>Get in touch</h4>
-					<ContactForm />
+					<form name="contact" action="/success" method="POST" data-netlify="true">
+						<input type="hidden" name="contact" value="contact" />
+						<div className="fields">
+							<div className="field half">
+								<label>Name</label>
+								<input name="name" id="name" type="text" placeholder="Name" required={true} />
+							</div>
+							<div className="field half">
+								<label>Phone</label>
+								<input name="phone" id="phone" type="tel" placeholder="Phone" required={true} />
+							</div>
+							<div className="field">
+								<label>Email</label>
+								<input name="email" id="email" type="email" placeholder="Email" required={true} />
+							</div>
+							<div className="field">
+								<label>Message</label>
+								<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<ul className="actions">
+							<li><input name="submit" value="Send Message" className="button large" type="submit" /></li>
+						</ul>
+					</form>
 				</div>
 			</div>
 		</section>

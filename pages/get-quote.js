@@ -7,7 +7,7 @@ import Design from '@/components/quote/design'
 import Pages from '@/components/quote/pages'
 import Content from '@/components/quote/content'
 import Programming from '@/components/quote/programming'
-import ContactForm from '@/components/contact-form'
+import ContactForm from '@/components/quote/contact'
 
 const GetQuote = (props) => {
 
@@ -16,14 +16,15 @@ const GetQuote = (props) => {
 	const [definition, setDefinition] = useState("")
 	const [linePrices, setLinePrices] = useState({})
 	const [totalPrice, setTotalPrice] = useState(0)
-	useEffect(()=> {
+
+	useEffect(() => {
 		for (let section in quoteData) {
 			selections[section] = {}
 			for (let item in quoteData[section]) {
 				selections[section][item] = false
 			}
 		}
-	}, [])	
+	}, [])
 
 	const next = () => {
 		if (position < forms.length) {
@@ -31,60 +32,68 @@ const GetQuote = (props) => {
 			setDefinition("");
 		}
 	}
-	
+
 	const prev = () => {
 		if (position > 0) {
 			setPosition(position - 1)
 			setDefinition("");
 		}
 	}
-	
-	const changeSelections = (section, key, newValue, fullUpdate=true) => {
+
+	const changeSelections = (section, key, newValue, fullUpdate = true) => {
 		selections[section][key] = newValue
-		setSelections(selections)		
+		setSelections(selections)
 		if (fullUpdate) {
 			updatePrice()
 			setDefinition(quoteData[section][key].info)
 		}
 	}
-	
+
 	const updatePrice = () => {
 		const n = {}
-		Object.entries(selections).forEach(([section, el])=> {
+		Object.entries(selections).forEach(([section, el]) => {
 			const val = Object
 				.entries(quoteData[section])
-				.filter(([key, val])=> selections[section][key] === true)
-				.map(([_, val])=> val.price)
-			n[section] = val.length > 0 ? val.reduce((a, b)=> a + b) : 0
+				.filter(([key, val]) => selections[section][key] === true)
+				.map(([_, val]) => val.price)
+			n[section] = val.length > 0 ? val.reduce((a, b) => a + b) : 0
 		})
 		console.log(n)
 		setLinePrices(n)
 		setTotalPrice(Object.values(n).reduce((a, b) => a + b))
 	}
-	
+
 	const forms = [
-		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="quote" />,
 		<WebType currentValues={selections.webType} onChange={changeSelections} />,
 		<Design currentValues={selections.design} onChange={changeSelections} />,
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
+		<ContactForm />,
 	]
 
 	return (
 		<div id="quote-section">
-			<h4>Step {position+1} of {forms.length}</h4>
+			<h4>Step {position + 1} of {forms.length}</h4>
 			<PositionHolder total={forms.length} position={position} setPosition={setPosition} />
 			<div id="quote-builder">
 				<div className="card">
-					{forms[position]}
-					<div className="definition">
-						{definition}
-					</div>
-					<div className="position-buttons">
-						{position > 0 && <button onClick={prev}>Previous</button>}
-						{position !== forms.length - 1 && <button onClick={next}>{position < forms.length - 2 ? "Next" : "Finish"}</button>}
-					</div>
+					<form name="quote" action="/success" method="POST" data-netlify="true">
+						<input type="hidden" name="quote"value="quote" />
+						<textarea className="hidden" name="additional info" value={JSON.stringify({ selections, linePrices, totalPrice })} />
+						{forms[position]}
+						<div className="definition">
+							{definition}
+						</div>
+						<div className="position-buttons">
+							{position > 0 && <input type="button" onClick={prev} value="Previous" />}
+							{position !== forms.length - 1 
+								? <input type="button" onClick={next} value="Next" /> 
+								: <button name="submit" type="submit">Submit</button>
+							}
+						</div>
+					</form>
+
 				</div>
 				<PriceBox linePrices={linePrices} total={totalPrice} />
 			</div>
