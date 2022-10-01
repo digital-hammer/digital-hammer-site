@@ -120,6 +120,7 @@ const GetQuote = (props) => {
 						<input type="hidden" name="quote" value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
+						<textarea className="hidden" name="Json Info" value={<pre>{JSON.stringify({contactInfo, selections, linePrices, totalPrice})}</pre>} />
 						<div className="definition">
 							{definition}
 						</div>
