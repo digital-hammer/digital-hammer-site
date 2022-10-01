@@ -77,7 +77,7 @@ const GetQuote = (props) => {
 			}
 		}
 		Object.entries(selections).forEach(([_, val])=> {
-			Object.entries(val).forEach(([k, v])=> {
+			Object.entries(val).forEach(([k, v=false])=> {
 				items[k] = v
 			})
 		})
@@ -85,7 +85,7 @@ const GetQuote = (props) => {
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
 			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
-				str+= `\t${k}: ${v}\n`
+				str+= `\t${k}: ${v || 'false'}\n`
 			})
 			return str
 		}))
