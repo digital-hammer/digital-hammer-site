@@ -3552,9 +3552,7 @@ body.is-preload #banner footer {
 	background-attachment: fixed;
 	background-position: 100% 25%;
 	padding: 4.5em 0 2em;
-}
 
-#contact-us {
 	>.inner {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3565,328 +3563,327 @@ body.is-preload #banner footer {
 		width: calc(100% - 4em);
 		box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
 	}
-}
 
-#contact-us .contact {
-	padding: 1.55em 2.5em 2em 2.5em;
-	list-style-type: none;
-	margin-bottom: 0;
-	width: 35%;
-	color: $secondary-light;
-	background-color: $grey-darker;
-
-	a {
+	.contact {
+		padding: 1.55em 2.5em 2em 2.5em;
+		list-style-type: none;
+		margin-bottom: 0;
+		width: 35%;
 		color: $secondary-light;
-		border-color: $secondary-light;
+		background-color: $grey-darker;
+
+		a {
+			color: $secondary-light;
+			border-color: $secondary-light;
+		}
+
+		li {
+			margin-top: 2em;
+			padding-bottom: 2em;
+			padding-left: 4em;
+			position: relative;
+		}
+
+		li strong {
+			color: $secondary;
+			display: block;
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+		}
+
+		li.icon:before {
+			color: $secondary;
+			position: absolute;
+			left: 0;
+			top: .75em;
+			font-size: 1.25em;
+		}
+
+		li:after {
+			background-color: $secondary-light;
+			bottom: 0;
+			content: '';
+			height: 1px;
+			left: -4em;
+			position: absolute;
+			width: 8em;
+		}
+
+		li:last-child {
+			margin-bottom: 0;
+		}
+
+		li:last-child:after {
+			display: none;
+		}
+
+		h4 {
+			color: $primary-dark;
+		}
 	}
 
-	li {
-		margin-top: 2em;
-		padding-bottom: 2em;
-		padding-left: 4em;
-		position: relative;
+	.form {
+		background-image: url("/images/overlay.png"), -moz-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
+		background-image: url("/images/overlay.png"), -webkit-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
+		background-image: url("/images/overlay.png"), -ms-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
+		background-image: url("/images/overlay.png"), linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
+		color: $grey-light;
+		-moz-flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow: 1;
+		margin-bottom: 0;
+		padding: 4em 3.5em;
 	}
 
-	li strong {
-		color: $secondary;
-		display: block;
-		margin-bottom: 0.5em;
+	form input,
+	form select,
+	form textarea {
+		color: $grey-light;
+	}
+
+	form a {
+		color: $grey-light;
+	}
+
+	form strong,
+	form b {
+		color: $grey-light;
+	}
+
+	form h1,
+	form h2,
+	form h3,
+	form h4,
+	form h5,
+	form h6 {
+		color: $white;
+	}
+
+	form blockquote {
+		border-left-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form code {
+		background: rgba(255, 255, 255, 0.065);
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form hr {
+		border-bottom-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form .box {
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form input[type="submit"],
+	form input[type="reset"],
+	form input[type="button"],
+	form button,
+	form .button {
+		background-color: transparent;
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+		color: $white  !important;
+	}
+
+	form input[type="submit"]:hover,
+	form input[type="submit"]:focus,
+	form input[type="reset"]:hover,
+	form input[type="reset"]:focus,
+	form input[type="button"]:hover,
+	form input[type="button"]:focus,
+	form button:hover,
+	form button:focus,
+	form .button:hover,
+	form .button:focus {
+		background-color: rgba(255, 255, 255, 0.065);
+	}
+
+	form input[type="submit"]:active,
+	form input[type="reset"]:active,
+	form input[type="button"]:active,
+	form button:active,
+	form .button:active {
+		background-color: rgba(255, 255, 255, 0.165);
+	}
+
+	form input[type="submit"].icon:before,
+	form input[type="reset"].icon:before,
+	form input[type="button"].icon:before,
+	form button.icon:before,
+	form .button.icon:before {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	form input[type="submit"].primary,
+	form input[type="reset"].primary,
+	form input[type="button"].primary,
+	form button.primary,
+	form .button.primary {
+		box-shadow: none;
+		background-color: $white;
+		color: $primary  !important;
+	}
+
+	form input[type="submit"].primary.icon:before,
+	form input[type="reset"].primary.icon:before,
+	form input[type="button"].primary.icon:before,
+	form button.primary.icon:before,
+	form .button.primary.icon:before {
+		color: $primary  !important;
+	}
+
+	form label {
+		color: $white;
+	}
+
+	form input[type="text"],
+	form input[type="password"],
+	form input[type="email"],
+	form input[type="tel"],
+	form select,
+	form textarea {
+		background-color: rgba(0, 0, 0, 0.065);
+		border-color: transparent;
+	}
+
+	form input[type="text"]:focus,
+	form input[type="password"]:focus,
+	form input[type="email"]:focus,
+	form input[type="tel"]:focus,
+	form select:focus,
+	form textarea:focus {
+		border-color: $white;
+		box-shadow: 0 0 0 1px $white;
+	}
+
+	form select {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.25)' /%3E%3C/svg%3E");
+	}
+
+	form select option {
+		color: $white;
+		background: $primary;
+	}
+
+	form input[type="checkbox"]+label,
+	form input[type="radio"]+label {
+		color: $white;
+	}
+
+	form input[type="checkbox"]+label:before,
+	form input[type="radio"]+label:before {
+		background: rgba(0, 0, 0, 0.065);
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form input[type="checkbox"]:checked+label:before,
+	form input[type="radio"]:checked+label:before {
+		background-color: $white;
+		border-color: $white;
+		color: $primary;
+	}
+
+	form input[type="checkbox"]:focus+label:before,
+	form input[type="radio"]:focus+label:before {
+		border-color: $white;
+		box-shadow: 0 0 0 1px $white;
+	}
+
+	form ::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	form :-moz-placeholder {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	form ::-moz-placeholder {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	form :-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	form .formerize-placeholder {
+		color: rgba(255, 255, 255, 0.75) !important;
+	}
+
+	form ul.alt li {
+		border-top-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form header p {
+		color: rgba(255, 255, 255, 0.75);
+	}
+
+	form header.major p {
+		color: $white;
+	}
+
+	form header.major:after {
+		background-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form table tbody tr {
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form table tbody tr:nth-child(2n + 1) {
+		background-color: rgba(255, 255, 255, 0.065);
+	}
+
+	form table th {
+		color: $white;
+	}
+
+	form table thead {
+		border-bottom-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form table tfoot {
+		border-top-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form table.alt tbody tr td {
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	form .spotlights article {
+		background-color: rgba(255, 255, 255, 0.065);
+	}
+
+	form .timeline>section {
+		border-color: rgba(255, 255, 255, 0.75);
+	}
+
+	form .timeline>section:before {
+		background-color: rgba(255, 255, 255, 0.75);
+	}
+
+	form .timeline header p {
+		color: $white;
+	}
+
+	form h4 {
+		font-weight: 700;
+		margin-bottom: 2em;
 		text-transform: uppercase;
 	}
 
-	li.icon:before {
-		color: $secondary;
-		position: absolute;
-		left: 0;
-		top: .75em;
-		font-size: 1.25em;
-	}
-
-	li:after {
-		background-color: $secondary-light;
-		bottom: 0;
-		content: '';
+	form label {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
 		height: 1px;
-		left: -4em;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
 		position: absolute;
-		width: 8em;
-	}
-
-	li:last-child {
-		margin-bottom: 0;
-	}
-
-	li:last-child:after {
-		display: none;
-	}
-
-	h4 {
-		color: $primary-dark;
+		width: 1px;
 	}
 }
-
-#contact-us form {
-	background-image: url("/images/overlay.png"), -moz-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
-	background-image: url("/images/overlay.png"), -webkit-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
-	background-image: url("/images/overlay.png"), -ms-linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
-	background-image: url("/images/overlay.png"), linear-gradient(45deg, $primary-o75 20%, $primary-o50 110%);
-	color: $grey-light;
-	-moz-flex-grow: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-grow: 1;
-	flex-grow: 1;
-	margin-bottom: 0;
-	padding: 4em 3.5em;
-}
-
-#contact-us form input,
-#contact-us form select,
-#contact-us form textarea {
-	color: $grey-light;
-}
-
-#contact-us form a {
-	color: $grey-light;
-}
-
-#contact-us form strong,
-#contact-us form b {
-	color: $grey-light;
-}
-
-#contact-us form h1,
-#contact-us form h2,
-#contact-us form h3,
-#contact-us form h4,
-#contact-us form h5,
-#contact-us form h6 {
-	color: $white;
-}
-
-#contact-us form blockquote {
-	border-left-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form code {
-	background: rgba(255, 255, 255, 0.065);
-	border-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form hr {
-	border-bottom-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form .box {
-	border-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form input[type="submit"],
-#contact-us form input[type="reset"],
-#contact-us form input[type="button"],
-#contact-us form button,
-#contact-us form .button {
-	background-color: transparent;
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
-	color: $white  !important;
-}
-
-#contact-us form input[type="submit"]:hover,
-#contact-us form input[type="submit"]:focus,
-#contact-us form input[type="reset"]:hover,
-#contact-us form input[type="reset"]:focus,
-#contact-us form input[type="button"]:hover,
-#contact-us form input[type="button"]:focus,
-#contact-us form button:hover,
-#contact-us form button:focus,
-#contact-us form .button:hover,
-#contact-us form .button:focus {
-	background-color: rgba(255, 255, 255, 0.065);
-}
-
-#contact-us form input[type="submit"]:active,
-#contact-us form input[type="reset"]:active,
-#contact-us form input[type="button"]:active,
-#contact-us form button:active,
-#contact-us form .button:active {
-	background-color: rgba(255, 255, 255, 0.165);
-}
-
-#contact-us form input[type="submit"].icon:before,
-#contact-us form input[type="reset"].icon:before,
-#contact-us form input[type="button"].icon:before,
-#contact-us form button.icon:before,
-#contact-us form .button.icon:before {
-	color: rgba(255, 255, 255, 0.75);
-}
-
-#contact-us form input[type="submit"].primary,
-#contact-us form input[type="reset"].primary,
-#contact-us form input[type="button"].primary,
-#contact-us form button.primary,
-#contact-us form .button.primary {
-	box-shadow: none;
-	background-color: $white;
-	color: $primary  !important;
-}
-
-#contact-us form input[type="submit"].primary.icon:before,
-#contact-us form input[type="reset"].primary.icon:before,
-#contact-us form input[type="button"].primary.icon:before,
-#contact-us form button.primary.icon:before,
-#contact-us form .button.primary.icon:before {
-	color: $primary  !important;
-}
-
-#contact-us form label {
-	color: $white;
-}
-
-#contact-us form input[type="text"],
-#contact-us form input[type="password"],
-#contact-us form input[type="email"],
-#contact-us form input[type="tel"],
-#contact-us form select,
-#contact-us form textarea {
-	background-color: rgba(0, 0, 0, 0.065);
-	border-color: transparent;
-}
-
-#contact-us form input[type="text"]:focus,
-#contact-us form input[type="password"]:focus,
-#contact-us form input[type="email"]:focus,
-#contact-us form input[type="tel"]:focus,
-#contact-us form select:focus,
-#contact-us form textarea:focus {
-	border-color: $white;
-	box-shadow: 0 0 0 1px $white;
-}
-
-#contact-us form select {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.25)' /%3E%3C/svg%3E");
-}
-
-#contact-us form select option {
-	color: $white;
-	background: $primary;
-}
-
-#contact-us form input[type="checkbox"]+label,
-#contact-us form input[type="radio"]+label {
-	color: $white;
-}
-
-#contact-us form input[type="checkbox"]+label:before,
-#contact-us form input[type="radio"]+label:before {
-	background: rgba(0, 0, 0, 0.065);
-	border-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form input[type="checkbox"]:checked+label:before,
-#contact-us form input[type="radio"]:checked+label:before {
-	background-color: $white;
-	border-color: $white;
-	color: $primary;
-}
-
-#contact-us form input[type="checkbox"]:focus+label:before,
-#contact-us form input[type="radio"]:focus+label:before {
-	border-color: $white;
-	box-shadow: 0 0 0 1px $white;
-}
-
-#contact-us form ::-webkit-input-placeholder {
-	color: rgba(255, 255, 255, 0.75) !important;
-}
-
-#contact-us form :-moz-placeholder {
-	color: rgba(255, 255, 255, 0.75) !important;
-}
-
-#contact-us form ::-moz-placeholder {
-	color: rgba(255, 255, 255, 0.75) !important;
-}
-
-#contact-us form :-ms-input-placeholder {
-	color: rgba(255, 255, 255, 0.75) !important;
-}
-
-#contact-us form .formerize-placeholder {
-	color: rgba(255, 255, 255, 0.75) !important;
-}
-
-#contact-us form ul.alt li {
-	border-top-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form header p {
-	color: rgba(255, 255, 255, 0.75);
-}
-
-#contact-us form header.major p {
-	color: $white;
-}
-
-#contact-us form header.major:after {
-	background-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form table tbody tr {
-	border-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form table tbody tr:nth-child(2n + 1) {
-	background-color: rgba(255, 255, 255, 0.065);
-}
-
-#contact-us form table th {
-	color: $white;
-}
-
-#contact-us form table thead {
-	border-bottom-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form table tfoot {
-	border-top-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form table.alt tbody tr td {
-	border-color: rgba(255, 255, 255, 0.25);
-}
-
-#contact-us form .spotlights article {
-	background-color: rgba(255, 255, 255, 0.065);
-}
-
-#contact-us form .timeline>section {
-	border-color: rgba(255, 255, 255, 0.75);
-}
-
-#contact-us form .timeline>section:before {
-	background-color: rgba(255, 255, 255, 0.75);
-}
-
-#contact-us form .timeline header p {
-	color: $white;
-}
-
-#contact-us form h4 {
-	font-weight: 700;
-	margin-bottom: 2em;
-	text-transform: uppercase;
-}
-
-#contact-us form label {
-	border: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-
 
 form>.fields {
 	display: -moz-flex;
@@ -3954,28 +3951,29 @@ form>.fields>.field.quarter {
 
 @media screen and (max-width: 980px) {
 
-	#contact-us form>.fields {
-		width: calc(100% + 3em);
-		margin: -1.5em 0 2em -1.5em;
-	}
+	#contact-us {
+		form>.fields {
+			width: calc(100% + 3em);
+			margin: -1.5em 0 2em -1.5em;
+		}
 
-	#contact-us form>.fields>.field {
-		padding: 1.5em 0 0 1.5em;
-		width: calc(100% - 1.5em);
-	}
+		form>.fields>.field {
+			padding: 1.5em 0 0 1.5em;
+			width: calc(100% - 1.5em);
+		}
 
-	#contact-us form>.fields>.field.half {
-		width: calc(100% - 1.5em);
-	}
+		form>.fields>.field.half {
+			width: calc(100% - 1.5em);
+		}
 
-	#contact-us form>.fields>.field.third {
-		width: calc(100% - 1.5em);
-	}
+		form>.fields>.field.third {
+			width: calc(100% - 1.5em);
+		}
 
-	#contact-us form>.fields>.field.quarter {
-		width: calc(100% - 1.5em);
+		form>.fields>.field.quarter {
+			width: calc(100% - 1.5em);
+		}
 	}
-
 }
 
 /* Footer */
@@ -4106,25 +4104,25 @@ form>.fields>.field.quarter {
 
 @media screen and (max-width: 980px) {
 
-	#contact-us form>.fields {
+	form>.fields {
 		width: calc(100% + 3em);
 		margin: -1.5em 0 2em -1.5em;
 	}
 
-	#contact-us form>.fields>.field {
+	form>.fields>.field {
 		padding: 1.5em 0 0 1.5em;
 		width: calc(100% - 1.5em);
 	}
 
-	#contact-us form>.fields>.field.half {
+	form>.fields>.field.half {
 		width: calc(100% - 1.5em);
 	}
 
-	#contact-us form>.fields>.field.third {
+	form>.fields>.field.third {
 		width: calc(100% - 1.5em);
 	}
 
-	#contact-us form>.fields>.field.quarter {
+	form>.fields>.field.quarter {
 		width: calc(100% - 1.5em);
 	}
 
@@ -4144,16 +4142,16 @@ form>.fields>.field.quarter {
 		padding-top: 10em;
 	}
 
-	#contact-us .contact {
+	.contact {
 		padding: 2em 2em 0.1em 2em;
 		width: 45%;
 	}
 
-	#contact-us .contact li {
+	.contact li {
 		padding-left: 3em;
 	}
 
-	#contact-us form {
+	form {
 		padding: 2em 2em;
 		width: 55%;
 	}
@@ -4166,7 +4164,7 @@ form>.fields>.field.quarter {
 		padding-top: 7em;
 	}
 
-	#contact-us>.inner {
+	>.inner {
 		-moz-flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
@@ -4174,26 +4172,26 @@ form>.fields>.field.quarter {
 		width: calc(100% - 3em);
 	}
 
-	#contact-us .contact {
+	.contact {
 		width: 100%;
 	}
 
-	#contact-us form {
+	form {
 		width: 100%;
 	}
 }
 
 @media screen and (max-width: 480px) {
 
-	#contact-us .contact {
+	.contact {
 		padding: 2em 1.5em 0.1em 1.5em;
 	}
 
-	#contact-us .contact li {
+	.contact li {
 		padding-left: 2.5em;
 	}
 
-	#contact-us form {
+	form {
 		padding: 2em 1.5em;
 	}
 

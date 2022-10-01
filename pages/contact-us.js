@@ -20,7 +20,10 @@ const ContactUs = (props) => {
 						<a href="email:info@thedigitalhammer.com">info@thedigitalhammer.com</a>
 					</li>
 				</ul>
-				<ContactForm />
+				<div className="form">
+					<h4>Get in touch</h4>
+					<ContactForm />
+				</div>
 			</div>
 		</section>
 	)
