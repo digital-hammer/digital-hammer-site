@@ -70,7 +70,7 @@ const GetQuote = (props) => {
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
 		<SEO currentValues={selections.seo} onChange={changeSelections} />,
-		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="Get Quote" />
+		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="quote" />
 	]
 
 	return (
