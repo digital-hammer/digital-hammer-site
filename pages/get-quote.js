@@ -70,9 +70,10 @@ const GetQuote = (props) => {
 		})
 
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
-			let str = `${key}: \n`
+			const n = "&#13;&#10;"
+			let str = `${key}: ${n}`
 			Object.entries(val).forEach(([k, v])=> {
-				str+= `\t${k}: ${v}\n`
+				str+= `\t${k}: ${v}${n}`
 			})
 			return str
 		}))
@@ -90,7 +91,7 @@ const GetQuote = (props) => {
 	return (
 		<div id="quote-section">
 			<h4>Step {position + 1} of {forms.length}</h4>
-			<PositionHolder total={forms.length} position={position} setPosition={setPosition} />
+			<PositionHolder total={forms.length} position={position} setPosition={changePosition} />
 			<div id="quote-builder">
 				<div className="card">
 					<form name="quote" action="/success" method="POST" data-netlify="true">
