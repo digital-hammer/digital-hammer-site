@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import quoteData from '@/data/quote'
 import PriceBox from '@/components/quote/price-box'
 import PositionHolder from '@/components/quote/position-holder'
@@ -23,7 +23,7 @@ const GetQuote = (props) => {
 		message: ""
 	})
 	const [formattedInfo, setFormattedInfo] = useState({})
-	
+	const form = useRef(false)
 	useEffect(() => {
 		for (let section in quoteData) {
 			selections[section] = {}
@@ -92,6 +92,7 @@ const GetQuote = (props) => {
 	
 	const submit = () => {
 		updateInfo()
+		form.current && form.current.submit()
 	}
 
 	const forms = [
@@ -109,7 +110,7 @@ const GetQuote = (props) => {
 			<PositionHolder total={forms.length} position={position} setPosition={changePosition} />
 			<div id="quote-builder">
 				<div className="card">
-					<form name="quote" action="/success" method="POST" data-netlify="true">
+					<form ref={form} name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote"value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
@@ -120,7 +121,7 @@ const GetQuote = (props) => {
 							{position > 0 && <input type="button" onClick={prev} value="Previous" />}
 							{position !== forms.length - 1 
 								? <input type="button" onClick={next} value="Next" /> 
-								: <button name="submit" type="submit" onClick={submit}>Submit</button>
+								: <input type="button" onClick={submit} value="Send" /> 
 							}
 						</div>
 					</form>
