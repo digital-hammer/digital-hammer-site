@@ -77,7 +77,7 @@ const GetQuote = (props) => {
 			}
 		}
 		Object.entries(selections).forEach(([_, val])=> {
-			Object.entries(val).forEach(([k, v=false])=> {
+			Object.entries(val).forEach(([k, v="false"])=> {
 				items[k] = v
 			})
 		})
