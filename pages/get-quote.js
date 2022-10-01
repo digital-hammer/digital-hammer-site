@@ -70,8 +70,8 @@ const GetQuote = (props) => {
 
 	const updateInfo = () => {
 		let items = {
-			"Contact Info": contactInfo,
-			"Pricing": {
+			contactInfo,
+			pricing: {
 				...linePrices,
 				totalPrice
 			}
