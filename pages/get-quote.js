@@ -97,7 +97,7 @@ const GetQuote = (props) => {
 					<form name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote"value="quote" />
 						{forms[position]}
-						<textarea className="hidden" name="additional info" value={formattedInfo} />
+						<textarea className="hidden" name="Quote Info" value={formattedInfo} />
 						<div className="definition">
 							{definition}
 						</div>
