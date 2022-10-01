@@ -63,12 +63,12 @@ const GetQuote = (props) => {
 	}
 	
 	const forms = [
+		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="quote" />,
 		<WebType currentValues={selections.webType} onChange={changeSelections} />,
 		<Design currentValues={selections.design} onChange={changeSelections} />,
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
-		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="quote" />
 	]
 
 	return (
