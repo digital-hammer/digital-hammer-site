@@ -16,8 +16,14 @@ const GetQuote = (props) => {
 	const [definition, setDefinition] = useState("")
 	const [linePrices, setLinePrices] = useState({})
 	const [totalPrice, setTotalPrice] = useState(0)
-	const [formattedInfo, setFormattedInfo] = useState(0)
-
+	const [contactInfo, setContactInfo] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		message: ""
+	})
+	const [formattedInfo, setFormattedInfo] = useState({})
+	
 	useEffect(() => {
 		for (let section in quoteData) {
 			selections[section] = {}
@@ -61,6 +67,7 @@ const GetQuote = (props) => {
 	const updateInfo = () => {
 		let items = {
 			pricing: {
+				...contactInfo,
 				...linePrices,
 				totalPrice
 			}
@@ -70,13 +77,21 @@ const GetQuote = (props) => {
 		})
 
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
-			const n = "&#13;&#10;"
-			let str = `${key}: ${n}`
+			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
-				str+= `\t${k}: ${v}${n}`
+				str+= `\t${k}: ${v}\n`
 			})
 			return str
 		}))
+	}
+
+	const updateContactInfo = (e) => {
+			const { id, value }= e.target
+			setContactInfo({...contactInfo, [id]: value})
+	}
+	
+	const submit = () => {
+		updateInfo()
 	}
 
 	const forms = [
@@ -85,7 +100,7 @@ const GetQuote = (props) => {
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
-		<ContactForm />,
+		<ContactForm currentValues={contactInfo} onChange={updateContactInfo}/>,
 	]
 
 	return (
@@ -97,7 +112,7 @@ const GetQuote = (props) => {
 					<form name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote"value="quote" />
 						{forms[position]}
-						<textarea className="hidden" name="Quote Info" value={formattedInfo} />
+						<textarea className="hidden" name="Info" value={formattedInfo} />
 						<div className="definition">
 							{definition}
 						</div>
@@ -105,7 +120,7 @@ const GetQuote = (props) => {
 							{position > 0 && <input type="button" onClick={prev} value="Previous" />}
 							{position !== forms.length - 1 
 								? <input type="button" onClick={next} value="Next" /> 
-								: <button name="submit" type="submit">Submit</button>
+								: <button name="submit" type="submit" onClick={submit}>Submit</button>
 							}
 						</div>
 					</form>
