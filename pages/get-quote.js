@@ -39,7 +39,11 @@ const GetQuote = (props) => {
 			updateInfo()
 	}
 
-	const next = () => changePosition(position + 1)
+	const next = () => {
+		checkCurrentFields()
+		changePosition(position + 1)
+	}
+
 	const prev = () => changePosition(position - 1)
 
 	const changeSelections = (section, key, newValue, fullUpdate = true) => {
@@ -67,14 +71,15 @@ const GetQuote = (props) => {
 	const updateInfo = () => {
 		let items = {
 			"Contact Info": contactInfo,
-			"Selections": {},
 			"Pricing": {
 				...linePrices,
 				totalPrice
 			}
 		}
-		Object.entries(selections).forEach(([k, v])=> {
-			items.Selections[k] = v
+		Object.entries(selections).forEach(([_, val])=> {
+			Object.entries(val).forEach(([k, v])=> {
+				items[k] = v
+			})
 		})
 
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
