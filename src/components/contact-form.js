@@ -11,15 +11,15 @@ export default (props) => {
         <div className="fields">
           <div className="field half">
             <label>Name</label>
-            <input name="name" id="name" type="text" placeholder="Name" />
+            <input name="name" id="name" type="text" placeholder="Name" required={true}/>
           </div>
           <div className="field half">
             <label>Phone</label>
-            <input name="phone" id="phone" type="tel" placeholder="Phone" />
+            <input name="phone" id="phone" type="tel" placeholder="Phone" required={true} />
           </div>
           <div className="field">
             <label>Email</label>
-            <input name="email" id="email" type="email" placeholder="Email" />
+            <input name="email" id="email" type="email" placeholder="Email" required={true}/>
           </div>
           <div className="field">
             <label>Message</label>
