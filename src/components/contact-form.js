@@ -7,19 +7,19 @@ export default (props) => {
 	return (
       <form name={form} action="/success" method="POST" data-netlify="true">
         <input type="hidden" name={form} value={form} />
-        {additionalInfo && <textarea className="hidden" value={JSON.stringify(additionalInfo)} />}
+        {additionalInfo && <textarea className="hidden" name="additional info" value={JSON.stringify(additionalInfo)} />}
         <div className="fields">
           <div className="field half">
             <label>Name</label>
-            <input name="name" id="name" type="text" placeholder="Name" />
+            <input name="name" id="name" type="text" placeholder="Name" required={true}/>
           </div>
           <div className="field half">
             <label>Phone</label>
-            <input name="phone" id="phone" type="tel" placeholder="Phone" />
+            <input name="phone" id="phone" type="tel" placeholder="Phone" required={true} />
           </div>
           <div className="field">
             <label>Email</label>
-            <input name="email" id="email" type="email" placeholder="Email" />
+            <input name="email" id="email" type="email" placeholder="Email" required={true}/>
           </div>
           <div className="field">
             <label>Message</label>
