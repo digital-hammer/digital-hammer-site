@@ -1,76 +1,94 @@
-import { useState } from 'react'
-import PriceBox from '@/components/price-box'
-import QuoteCard from '@/components/quote-card'
-import PositionHolder from '@/components/position-holder'
-import formData from '@/data/quote-form'
-import ContactForm from 'src/components/contact-form'
+import { useEffect, useState } from 'react'
+import quoteData from '@/data/quote'
+import PriceBox from '@/components/quote/price-box'
+import PositionHolder from '@/components/quote/position-holder'
+import WebType from '@/components/quote/web-type'
+import Design from '@/components/quote/design'
+import Pages from '@/components/quote/pages'
+import Content from '@/components/quote/content'
+import Programming from '@/components/quote/programming'
+import SEO from '@/components/quote/seo'
+import ContactForm from '@/components/contact-form'
 
 const GetQuote = (props) => {
 
-	const [info, setInfo] = useState();
-	const [position, setPosition] = useState(0);
-	const [definition, setDefinition] = useState("");
-	const [lineItems, setLineItems] = useState({});
-	const [totalPrice, setTotalPrice] = useState(0);
+	const [selections, setSelections] = useState({})
+	const [position, setPosition] = useState(0)
+	const [definition, setDefinition] = useState("")
+	const [linePrices, setLinePrices] = useState({})
+	const [totalPrice, setTotalPrice] = useState(0)
+	useEffect(()=> {
+		for (let section in quoteData) {
+			selections[section] = {}
+			for (let item in quoteData[section]) {
+				selections[section][item] = false
+			}
+		}
+	}, [])	
+
 	const next = () => {
-		if (position < Object.keys(formData).length) {
-			setPosition(position + 1);
+		if (position < forms.length) {
+			setPosition(position + 1)
 			setDefinition("");
 		}
 	}
-
+	
 	const prev = () => {
 		if (position > 0) {
-			setPosition(position - 1);
+			setPosition(position - 1)
 			setDefinition("");
 		}
 	}
-
-	const finish = () => {
-		if (position < Object.keys(formData).length) {
-			setPosition(position + 1);
-			setDefinition("");
+	
+	const changeSelections = (section, key, newValue, fullUpdate=true) => {
+		selections[section][key] = newValue
+		setSelections(selections)		
+		if (fullUpdate) {
+			updatePrice()
+			setDefinition(quoteData[section][key].info)
 		}
 	}
-
-	const changeInfo = (newInfo, el, def) => {
-		let updatedInfo = { ...info }
-		updatedInfo[el] = { ...newInfo }
-		setInfo(updatedInfo);
-		setDefinition(def)
-	}
-
-	const updatePrice = (key, val = 0) => {
-		const n = { ...lineItems }
-		val === 0 ? delete n[key] : n[key] = val
-		setLineItems(n)
+	
+	const updatePrice = () => {
+		const n = {}
+		Object.entries(selections).forEach(([section, el])=> {
+			const val = Object
+				.entries(quoteData[section])
+				.filter(([key, val])=> selections[section][key] === true)
+				.map(([_, val])=> val.price)
+			n[section] = val.length > 0 ? val.reduce((a, b)=> a + b) : 0
+		})
+		console.log(n)
+		setLinePrices(n)
 		setTotalPrice(Object.values(n).reduce((a, b) => a + b))
 	}
+	
+	const forms = [
+		<WebType currentValues={selections.webType} onChange={changeSelections} />,
+		<Design currentValues={selections.design} onChange={changeSelections} />,
+		<Pages currentValues={selections.pages} onChange={changeSelections} />,
+		<Content currentValues={selections.content} onChange={changeSelections} />,
+		<Programming currentValues={selections.programming} onChange={changeSelections} />,
+		<SEO currentValues={selections.seo} onChange={changeSelections} />,
+		<ContactForm additionalInfo={{selections, linePrices, totalPrice}} form="Get Quote" />
+	]
 
-	const onQuoteCardChange = ({ definition, lineItems }) => {
-		setDefinition(definition)
-		lineItems.map((val, key) => updatePrice(key, val));
-	}
 	return (
 		<div id="quote-section">
-			<h4>Step {position+1} of {formData.length+1}</h4>
-			<PositionHolder total={formData.length+1} current={position} />
+			<h4>Step {position+1} of {forms.length}</h4>
+			<PositionHolder total={forms.length} position={position} setPosition={setPosition} />
 			<div id="quote-builder">
 				<div className="card">
-					{position !== formData.length 
-						? <QuoteCard questions={formData[position].questions} onChange={onQuoteCardChange} />
-						:  <ContactForm />
-					}
+					{forms[position]}
 					<div className="definition">
 						{definition}
 					</div>
-
 					<div className="position-buttons">
 						{position > 0 && <button onClick={prev}>Previous</button>}
-						{position !== formData.length ? <button onClick={next}>Next</button> : <button onClick={finish}>Finish</button>}
+						{position !== forms.length - 1 && <button onClick={next}>{position < forms.length - 2 ? "Next" : "Finish"}</button>}
 					</div>
 				</div>
-				<PriceBox lineItems={lineItems} total={totalPrice} />
+				<PriceBox linePrices={linePrices} total={totalPrice} />
 			</div>
 		</div>
 	);

@@ -1,9 +1,14 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default (props) => {
+  const {
+    form="contact",
+    additionalInfo = false,
+  } = props
 	return (
-      <form name="contact" action="/success" method="POST" data-netlify="true">
-        <input type="hidden" name="contact-form" value="contact" />
+      <form name={form} action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name={form} value={form} />
+        <input type="hidden" value={JSON.stringify(additionalInfo)}/>
         <h4>Get in touch</h4>
         <div className="fields">
           <div className="field half">
