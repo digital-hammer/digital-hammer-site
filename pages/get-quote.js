@@ -77,7 +77,7 @@ const GetQuote = (props) => {
 			}
 		}
 		Object.entries(selections).forEach(([_, val])=> {
-			Object.entries(val).forEach(([k, v])=> {
+			Object.entries(val).forEach(([k, v="false"])=> {
 				items[k] = v
 			})
 		})
@@ -85,7 +85,7 @@ const GetQuote = (props) => {
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
 			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
-				str+= `\t${k}: ${v}\n`
+				str+= `\t${k}: ${v || 'false'}\n`
 			})
 			return str
 		}))
@@ -120,6 +120,7 @@ const GetQuote = (props) => {
 						<input type="hidden" name="quote" value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
+						<textarea className="hidden" name="Json Info" value={<pre>{JSON.stringify({contactInfo, selections, linePrices, totalPrice})}</pre>} />
 						<div className="definition">
 							{definition}
 						</div>
