@@ -66,14 +66,15 @@ const GetQuote = (props) => {
 
 	const updateInfo = () => {
 		let items = {
-			pricing: {
-				...contactInfo,
+			"Contact Info": contactInfo,
+			"Selections": {},
+			"Pricing": {
 				...linePrices,
 				totalPrice
 			}
 		}
 		Object.entries(selections).forEach(([k, v])=> {
-			return `\t${k}: ${v}\n`
+			items.Selections[k] = v
 		})
 
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
