@@ -1,5 +1,3 @@
-import { target } from "next.config"
-
 export default (props) => {
   const {
     currentValues = {},
@@ -28,6 +26,7 @@ export default (props) => {
     const {value, checked} = e.target
     onChange('webType', value, checked, fullUpdate)
   }
+
   const createInput = (key, text, onChange, type) => {
     return (
       <>
@@ -55,7 +54,6 @@ export default (props) => {
           {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
         </div>
       )}
-
     </div>
   )
 }

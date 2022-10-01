@@ -30,10 +30,168 @@ export default {
     },
 
   },
-  design: {},
-  pages: {},
-  content: {},
-  programming: {},
-  seo: {},	
-
+  design: {
+    template: {
+      info: "",
+      price: 200,
+    },
+    basicCustom: {
+      info: "",
+      price: 200,
+    },  
+    advancedCustom: {
+      info: "",
+      price: 200,
+    },  
+  },
+  pages: {
+    blog: {
+      info: "",
+      price: 200,
+    },
+    specials: {
+      info: "",
+      price: 200,
+    },
+    members: {
+      info: "",
+      price: 200,
+    },
+    portfolio: {
+      info: "",
+      price: 200,
+    },
+    testimonials: {
+      info: "",
+      price: 50,
+    },
+    sponsors: {
+      info: "",
+      price: 50,
+    },
+    events: {
+      info: "",
+      price: 200,
+    },
+    faqs: {
+      info: "",
+      price: 200,
+    },
+    news: {
+      info: "",
+      price: 200,
+    },
+    library: {
+      info: "",
+      price: 200,
+    },
+    projects: {
+      info: "",
+      price: 200,
+    },
+    advancedFilters: {
+      info: "",
+      price: 200,
+    },
+    search: {
+      info: "",
+      price: 200,
+    },
+    careers: {
+      info: "",
+      price: 200,
+    },
+  },
+  content: {
+    customCopy: {
+      info: "",
+      price: 1000,
+    },
+    selfCopy: {
+      info: "",
+      price: 0,
+    },
+    hybridCopy: {
+      info: "",
+      price: 0,
+    },
+    hybridNumber: {
+      info: "",
+      price: 100,
+    },
+    photography: {
+      info: "",
+      price: 700,
+    },
+  },
+  programming: {
+    gallery: {
+      info: "",
+      price: 200,
+    },
+    videos: {
+      info: "",
+      price: 200,
+    },
+    slideshow: {
+      info: "",
+      price: 200,
+    },
+    employmentApplication: {
+      info: "",
+      price: 200,
+    },
+    ads: {
+      info: "",
+      price: 200,
+    },
+    locations: {
+      info: "",
+      price: 200,
+    },
+    memberLogin: {
+      info: "",
+      price: 200,
+    },
+    signUp: {
+      info: "",
+      price: 200,
+    },
+    autoSend: {
+      info: "",
+      price: 200,
+    },
+    contactForm: {
+      info: "",
+      price: 200,
+    },
+    mediaFeed: {
+      info: "",
+      price: 200,
+    },
+    timeline: {
+      info: "",
+      price: 200,
+    },
+    affiliatesSlider: {
+      info: "",
+      price: 200,
+    },
+    shareButtons: {
+      info: "",
+      price: 200,
+    },
+    giftCards: {
+      info: "",
+      price: 200,
+    },
+    tickets: {
+      info: "",
+      price: 200,
+    },
+    quoteBuilder: {
+      info: "",
+      price: 500,
+    }
+  },
 }

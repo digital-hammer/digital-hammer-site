@@ -1,5 +1,3 @@
-import { target } from "next.config"
-
 export default (props) => {
   const {
     currentValues = {},

@@ -10,20 +10,19 @@ export default (props)=> {
 		pages: "Additional Pages",
 		content: "Content Needs",
 		programming: "Additional Programming",
-		seo: "SEO needs",
 	}
 	return (
 		<div id="price-box">
 			{Object.entries(linePrices).map(([text, total])=> {
 				return total.toFixed(0) > 0 && (
 					<h5 key={text}>
-							{titles[text] || text}: <span className="float-right">$ {total}</span>
+							{titles[text] || text}: <span>$ {total}</span>
 					</h5>
 				)
 			})}
 			<hr />
 			<h4>
-				Subtotal:  <span className="float-right">$ {total}</span>
+				Subtotal:  <span>$ {total}</span>
 			</h4>				
 		</div>
 	);
