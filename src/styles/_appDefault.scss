@@ -4474,7 +4474,7 @@ label.switch {
 				display: flex;
 				justify-content: end;
 
-				input[type="button"] {
+				button, input[type="button"] {
 					margin-left: 1em;
 				}
 			}

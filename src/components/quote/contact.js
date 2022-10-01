@@ -15,7 +15,7 @@ export default (props) => {
           <input name="email" id="email" type="email" placeholder="Email" required={true} />
         </div>
         <div className="field">
-          <label>Message</label>
+          <label>Additional Info</label>
           <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
         </div>
       </div>
