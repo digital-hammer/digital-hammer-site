@@ -76,12 +76,10 @@ const GetQuote = (props) => {
 				totalPrice
 			}
 		}
-		Object.entries(selections).forEach(([_, val])=> {
-			Object.entries(val).forEach(([k, v="false"])=> {
-				items[k] = v
-			})
+		Object.entries(selections).forEach(([key, val])=> {
+			items[key] = val
 		})
-
+		console.log(items)
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
 			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
@@ -120,7 +118,7 @@ const GetQuote = (props) => {
 						<input type="hidden" name="quote" value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
-						<textarea className="hidden" name="Json Info" value={<pre>{JSON.stringify({contactInfo, selections, linePrices, totalPrice})}</pre>} />
+						<textarea className="hidden" name="Json Info" value={JSON.stringify({contactInfo, selections, linePrices, totalPrice})} />
 						<div className="definition">
 							{definition}
 						</div>
