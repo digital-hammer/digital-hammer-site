@@ -86,7 +86,7 @@ const GetQuote = (props) => {
 				str+= `\t${k}: ${v || 'false'}\n`
 			})
 			return str
-		}))
+		}).reduce((a, b)=> a + b))
 	}
 
 	const updateContactInfo = (e) => {
