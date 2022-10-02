@@ -10,6 +10,7 @@ const ContactUs = (props) => {
 			label: 'form_label',
 			value: 'xxxxxx',
 		})
+		console.log(form.current)
 		form.current && form.current.submit()
 	}
 
@@ -54,7 +55,7 @@ const ContactUs = (props) => {
 							</div>
 						</div>
 						<ul className="actions">
-							<li><input name="submit" value="Send Message" className="button large" type="button" onClick={onClick}/></li>
+							<li><input value="Send Message" className="button large" type="button" onClick={onClick}/></li>
 						</ul>
 					</form>
 				</div>
