@@ -1,16 +1,18 @@
-import React from 'react'
+import {useRef} from 'react'
 import ReactGA from 'react-ga'
 
-const onClick = () => {
-	ReactGA.event({
-		action: 'submit-form',
-		category: 'form-category',
-		label: 'form_label',
-		value: 'xxxxxx',
-	})
-}
-
 const ContactUs = (props) => {
+	const form = useRef(false)
+	const onClick = () => {
+		ReactGA.event({
+			action: 'submit-form',
+			category: 'form-category',
+			label: 'form_label',
+			value: 'xxxxxx',
+		})
+		form.current && form.current.submit()
+	}
+
 	return (
 		<section id="contact-us">
 			<div className="inner">
@@ -31,7 +33,7 @@ const ContactUs = (props) => {
 				</ul>
 				<div className="form">
 					<h4>Get in touch</h4>
-					<form name="contact" action="/success" method="POST" data-netlify="true">
+					<form name="contact" action="/success" method="POST" data-netlify="true" ref={form}>
 						<input type="hidden" name="contact" value="contact" />
 						<div className="fields">
 							<div className="field half">
@@ -52,7 +54,7 @@ const ContactUs = (props) => {
 							</div>
 						</div>
 						<ul className="actions">
-							<li><input name="submit" value="Send Message" className="button large" type="submit" onClick={onClick}/></li>
+							<li><input name="submit" value="Send Message" className="button large" type="button" onClick={onClick}/></li>
 						</ul>
 					</form>
 				</div>
