@@ -1,16 +1,18 @@
-import React from 'react'
+import {useRef} from 'react'
 import ReactGA from 'react-ga'
 
-const onClick = () => {
-	ReactGA.event({
-		action: 'submit-form',
-		category: 'form-category',
-		label: 'form_label',
-		value: 'xxxxxx',
-	})
-}
-
 const ContactUs = (props) => {
+	const form = useRef(false)
+	const onClick = () => {
+		ReactGA.event({
+			action: 'submit-form',
+			category: 'form-category',
+			label: 'form_label',
+			value: 'xxxxxx',
+		})
+		form.current && form.current.submit()
+	}
+
 	return (
 		<section id="contact-us">
 			<div className="inner">
