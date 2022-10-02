@@ -4384,14 +4384,21 @@ label.switch {
 	height: 100vh;
 	position: relative;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 	img {
 		position: relative;
-		width: 80%;
-		height: 80%;
+		width: 70%;
+		height: 70%;
 	}
+		
+		h1 {
+			font-size: 40px;
+			margin-bottom: .5em;
+		}
+	
 }
 
 #coming-soon {
