@@ -1,3 +1,14 @@
+import ReactGA from 'react-ga'
+
+const onClick = () => {
+	ReactGA.event({
+		action: 'submit-form',
+		category: 'form-category',
+		label: 'form_label',
+		value: 'xxxxxx',
+	})
+}
+
 const ContactUs = (props) => {
 	return (
 		<section id="contact-us">
@@ -40,7 +51,7 @@ const ContactUs = (props) => {
 							</div>
 						</div>
 						<ul className="actions">
-							<li><input name="submit" value="Send Message" className="button large" type="submit" /></li>
+							<li><input name="submit" value="Send Message" className="button large" type="submit" onClick={onClick}/></li>
 						</ul>
 					</form>
 				</div>
