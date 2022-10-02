@@ -4,18 +4,15 @@ export default (props) => {
     onChange
   } = props
 
-
-  const programming = {
-    products: "Products/Services",
-    giftCards: "Gift Cards",
-    tickets: "Event Tickets",
-    donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
+  const radioButtons = {
+    basic: "Basic",
+    intermediate: "Mid-level",
+    advanced: "Advanced"
   }
 
-  const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
-    onChange('programming', value, checked, fullUpdate)
+  const radioSwitch = (e) => {
+    Object.entries(radioButtons).forEach(([key, _]) => onChange('process', key, false, false))
+    onChange('process', e.target.value, true)
   }
   const createInput = (key, text, onChange, type) => {
     return (
@@ -32,12 +29,12 @@ export default (props) => {
     )
   }
   return (
-    <div id="web-type">
-      <h3>What type of website are you looking for?</h3>
-        <div className="eCommerce-services">
-          <h3>What types of products would you be selling?</h3>
-          {Object.entries(programming).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-        </div>
+    <div id="process">
+      <h3>What sort of develepment process are you looking for?</h3>
+      <div className="switches">
+        {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
+      </div>
+
     </div>
   )
 }

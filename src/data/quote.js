@@ -1,4 +1,18 @@
 export default {
+  process: {
+    basic: {
+      info: "",
+      price: 250,
+    },
+    intermediate: {
+      info: "",
+      price: 500,
+    },  
+    advanced: {
+      info: "",
+      price: 1000,
+    },  
+  },
   webType: {
     website: {
       info: "",

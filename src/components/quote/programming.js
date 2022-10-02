@@ -6,15 +6,27 @@ export default (props) => {
 
 
   const programming = {
-    products: "Products/Services",
-    giftCards: "Gift Cards",
-    tickets: "Event Tickets",
-    donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
+    gallery: "Photo Gallery",
+    videos: "Videos",
+    slideshow: "Image Slide Show(s)",
+    employmentApplication: "Online Employement Application",
+    ads: "Ads Display",
+    locations: "Map with single or multiple locations",
+    memberLogin: "",
+    signUp: "",
+    autoSend: "",
+    contactForm: "",
+    mediaFeed: "",
+    timeline: "",
+    affiliatesSlider: "",
+    shareButtons: "",
+    giftCards: "",
+    tickets: "",
+    quoteBuilder: ""
   }
 
   const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
+    const { value, checked } = e.target
     onChange('programming', value, checked, fullUpdate)
   }
   const createInput = (key, text, onChange, type) => {
@@ -32,12 +44,9 @@ export default (props) => {
     )
   }
   return (
-    <div id="web-type">
+    <div id="programming">
       <h3>What type of website are you looking for?</h3>
-        <div className="eCommerce-services">
-          <h3>What types of products would you be selling?</h3>
-          {Object.entries(programming).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-        </div>
+      {Object.entries(programming).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
     </div>
   )
 }

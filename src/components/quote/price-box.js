@@ -6,9 +6,8 @@ export default (props)=> {
 	} = props || {}
 	const titles = {
 		webType: "Website Type",
-		design: "Design Needs",
-		pages: "Additional Pages",
-		content: "Content Needs",
+		pages: "Advanced Pages",
+		content: "Copywrite",
 		programming: "Additional Programming",
 	}
 	return (
