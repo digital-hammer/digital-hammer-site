@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import quoteData from '@/data/quote'
 import PriceBox from '@/components/quote/price-box'
 import PositionHolder from '@/components/quote/position-holder'
+import Process from '@/components/quote/process'
 import WebType from '@/components/quote/web-type'
 import Design from '@/components/quote/design'
 import Pages from '@/components/quote/pages'
@@ -70,8 +71,8 @@ const GetQuote = (props) => {
 
 	const updateInfo = () => {
 		let items = {
-			"Contact Info": contactInfo,
-			"Pricing": {
+			contactInfo,
+			pricing: {
 				...linePrices,
 				totalPrice
 			}
@@ -79,7 +80,6 @@ const GetQuote = (props) => {
 		Object.entries(selections).forEach(([key, val])=> {
 			items[key] = val
 		})
-		console.log(items)
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
 			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
@@ -100,6 +100,7 @@ const GetQuote = (props) => {
 	}
 
 	const forms = [
+		<Process currentValues={selections.process} onChange={changeSelections} />,
 		<WebType currentValues={selections.webType} onChange={changeSelections} />,
 		<Design currentValues={selections.design} onChange={changeSelections} />,
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
