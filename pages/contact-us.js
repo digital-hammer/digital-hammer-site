@@ -10,7 +10,6 @@ const ContactUs = (props) => {
 			label: 'form_label',
 			value: 'xxxxxx',
 		})
-		console.log(form.current)
 		form.current && form.current.submit()
 	}
 
