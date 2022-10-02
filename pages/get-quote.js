@@ -79,7 +79,6 @@ const GetQuote = (props) => {
 		Object.entries(selections).forEach(([key, val])=> {
 			items[key] = val
 		})
-		console.log(items)
 		setFormattedInfo(Object.entries(items).map(([key, val])=> {
 			let str = `${key}: \n`
 			Object.entries(val).forEach(([k, v])=> {
