@@ -35,9 +35,9 @@ const GetQuote = (props) => {
 	}, [])
 
 	const changePosition = (p) => {
-			setPosition(p)
-			setDefinition("");
-			updateInfo()
+		setPosition(p)
+		setDefinition("");
+		updateInfo()
 	}
 
 	const next = () => {
@@ -77,23 +77,23 @@ const GetQuote = (props) => {
 				totalPrice
 			}
 		}
-		Object.entries(selections).forEach(([key, val])=> {
+		Object.entries(selections).forEach(([key, val]) => {
 			items[key] = val
 		})
-		setFormattedInfo(Object.entries(items).map(([key, val])=> {
+		setFormattedInfo(Object.entries(items).map(([key, val]) => {
 			let str = `${key}: \n`
-			Object.entries(val).forEach(([k, v])=> {
-				str+= `\t${k}: ${v || 'false'}\n`
+			Object.entries(val).forEach(([k, v]) => {
+				str += `\t${k}: ${v || 'false'}\n`
 			})
 			return str
-		}).reduce((a, b)=> a + b))
+		}).reduce((a, b) => a + b))
 	}
 
 	const updateContactInfo = (e) => {
-			const { id, value }= e.target
-			setContactInfo({...contactInfo, [id]: value})
+		const { id, value } = e.target
+		setContactInfo({ ...contactInfo, [id]: value })
 	}
-	
+
 	const submit = () => {
 		updateInfo()
 		form.current && form.current.submit()
@@ -106,32 +106,31 @@ const GetQuote = (props) => {
 		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
-		<ContactForm currentValues={contactInfo} onChange={updateContactInfo}/>,
+		<ContactForm currentValues={contactInfo} onChange={updateContactInfo} />,
 	]
 
 	return (
 		<div id="quote-section">
 			<h4>Step {position + 1} of {forms.length}</h4>
 			<PositionHolder total={forms.length} position={position} setPosition={changePosition} />
-			<div id="quote-builder">
-				<div className="card">
+			<div className="card">
+				<div id="quote-builder">
 					<form ref={form} name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote" value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
-						<textarea className="hidden" name="Json Info" value={JSON.stringify({contactInfo, selections, linePrices, totalPrice})} />
+						<textarea className="hidden" name="Json Info" value={JSON.stringify({ contactInfo, selections, linePrices, totalPrice })} />
 						<div className="definition">
 							{definition}
 						</div>
 						<div className="position-buttons">
 							{position > 0 && <input type="button" onClick={prev} value="Previous" />}
-							{position !== forms.length - 1 
-								? <input type="button" onClick={next} value="Next" /> 
-								: <input type="button" onClick={submit} value="Send" /> 
+							{position !== forms.length - 1
+								? <input type="button" onClick={next} value="Next" />
+								: <input type="button" onClick={submit} value="Send" />
 							}
 						</div>
 					</form>
-
 				</div>
 				<PriceBox linePrices={linePrices} total={totalPrice} />
 			</div>

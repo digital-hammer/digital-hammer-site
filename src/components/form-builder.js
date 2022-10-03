@@ -8,7 +8,7 @@ export default (props) => {
   } = props || {}
 
   return (
-    <form id="quote-machine">
+    <form>
       {header && <h4>{header}</h4>}
       {questions.map((item) => {
         const {
