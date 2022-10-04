@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react'
 import quoteData from '@/data/quote'
 import PriceBox from '@/components/quote/price-box'
 import PositionHolder from '@/components/quote/position-holder'
-import Process from '@/components/quote/process'
 import WebType from '@/components/quote/web-type'
 import Design from '@/components/quote/design'
 import Pages from '@/components/quote/pages'
@@ -100,11 +99,10 @@ const GetQuote = (props) => {
 	}
 
 	const forms = [
-		<Process currentValues={selections.process} onChange={changeSelections} />,
 		<WebType currentValues={selections.webType} onChange={changeSelections} />,
 		<Design currentValues={selections.design} onChange={changeSelections} />,
-		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Content currentValues={selections.content} onChange={changeSelections} />,
+		<Pages currentValues={selections.pages} onChange={changeSelections} />,
 		<Programming currentValues={selections.programming} onChange={changeSelections} />,
 		<ContactForm currentValues={contactInfo} onChange={updateContactInfo} />,
 	]

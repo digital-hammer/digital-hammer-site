@@ -1,18 +1,4 @@
 export default {
-  process: {
-    basic: {
-      info: "",
-      price: 250,
-    },
-    intermediate: {
-      info: "",
-      price: 500,
-    },  
-    advanced: {
-      info: "",
-      price: 1000,
-    },  
-  },
   webType: {
     website: {
       info: "",
@@ -49,11 +35,11 @@ export default {
       info: "",
       price: 200,
     },
-    basicCustom: {
+    customBasic: {
       info: "",
       price: 200,
     },  
-    advancedCustom: {
+    customAdvanced: {
       info: "",
       price: 200,
     },  
@@ -117,25 +103,25 @@ export default {
     },
   },
   content: {
-    customCopy: {
-      info: "",
-      price: 1000,
-    },
     selfCopy: {
       info: "",
       price: 0,
     },
-    hybridCopy: {
+    customBasic: {
       info: "",
-      price: 0,
+      price: 1000,
     },
-    hybridNumber: {
+    copyAdvanced: {
       info: "",
       price: 100,
     },
-    photography: {
+    photoYes: {
       info: "",
       price: 700,
+    },
+    photoNo: {
+      info: "",
+      price: 0,
     },
   },
   programming: {
@@ -171,10 +157,6 @@ export default {
       info: "",
       price: 200,
     },
-    autoSend: {
-      info: "",
-      price: 200,
-    },
     contactForm: {
       info: "",
       price: 200,
@@ -192,14 +174,6 @@ export default {
       price: 200,
     },
     shareButtons: {
-      info: "",
-      price: 200,
-    },
-    giftCards: {
-      info: "",
-      price: 200,
-    },
-    tickets: {
       info: "",
       price: 200,
     },

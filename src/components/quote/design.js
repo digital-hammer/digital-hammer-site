@@ -4,9 +4,10 @@ export default (props) => {
     onChange
   } = props
 
-  const radioButtons = {
-    website: "Website",
-    eCommerce: "eCommerce",
+  const design = {
+    template: "Template",
+    customBasic: "Custom | Basic",
+    customAdvanced: "Custom | Advanced",
   }
 
   const productTypes = {
@@ -17,16 +18,16 @@ export default (props) => {
     payments: "Accept Invoice Payments",
   }
 
-  const radioSwitch = (e) => {
-    Object.entries({...radioButtons, ...productTypes}).forEach(([key, _])=> onChange('webType', key, false, false))
-    onChange('webType', e.target.value, true)
+  const radioSwitch = (e, reset) => {
+    reset && Object.entries(reset).forEach(([key, _]) => onChange('design', key, false, false))
+    onChange('design', e.target.value, true)
   }
 
   const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
-    onChange('webType', value, checked, fullUpdate)
+    const { value, checked } = e.target
+    onChange('design', value, checked, fullUpdate)
   }
-  const createInput = (key, text, onChange, type) => {
+  const createInput = (key, text, el, type) => {
     return (
       <>
         <input
@@ -34,7 +35,7 @@ export default (props) => {
           type={type}
           value={key}
           checked={currentValues[key]}
-          onChange={onChange}
+          onChange={(e)=> radioSwitch(e, el)}
         />
         <label htmlFor={key}>{text}</label>
       </>
@@ -42,10 +43,10 @@ export default (props) => {
   }
   return (
     <div id="design">
+      <h2>Design</h2>
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
-      {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
-
+        {Object.entries(design).map(([key, val]) => createInput(key, val, design, "radio"))}
       </div>
       {currentValues.eCommerce && (
         <div className="eCommerce-services">

@@ -5,50 +5,46 @@ export default (props) => {
   } = props
 
   const content = {
-    customCopy: {
-      info: "",
-      price: 1000,
-    },
-    selfCopy: {
-      info: "",
-      price: 0,
-    },
-    hybridCopy: {
-      info: "",
-      price: 0,
-    },
-    hybridNumber: {
-      info: "",
-      price: 100,
-    },
-    photography: {
-      info: "",
-      price: 700,
-    },
+    copySelf: "Myself",
+    copyBasic: "Basic Package",
+    copyAdvanced: "Advanced Package",
   }
 
-  const radioChange = (e, fullUpdate = true) => {
-    const { value, checked } = e.target
-    onChange('content', value, checked, fullUpdate)
+  const photography = {
+    photoNo: "No",
+    photoYes: "Yes",
   }
-  const createInput = (key, text, onChange, type) => {
+
+  const radioSwitch = (e, reset) => {
+    reset && Object.entries(reset).forEach(([key, _]) => onChange('content', key, false, false))
+    onChange('content', e.target.value, true)
+  }
+
+  const createInput = (key, text, el, type) => {
     return (
-      <>
+      <div>
         <input
           id={key}
           type={type}
           value={key}
           checked={currentValues[key]}
-          onChange={onChange}
+          onChange={(e)=> radioSwitch(e, el)}
         />
         <label htmlFor={key}>{text}</label>
-      </>
+      </div>
     )
   }
   return (
     <div id="content">
-      <h3>What types of products would you be selling?</h3>
-      {Object.entries(content).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
+      <h2>Additional Content</h2>
+      <h3>How will you create the copy (text) for your website?</h3>
+      <div className="switches">
+        {Object.entries(content).map(([key, val]) => createInput(key, val, content, "radio"))}
+      </div>
+      <h3>Do you need any professional photography?</h3>
+      <div className="switches">
+        {Object.entries(photography).map(([key, val]) => createInput(key, val, photography, "radio"))}
+      </div>
     </div>
   )
 }
