@@ -5,11 +5,20 @@ export default (props) => {
   } = props
 
   const pages = {
-    products: "Products/Services",
-    giftCards: "Gift Cards",
-    tickets: "Event Tickets",
-    donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
+    blog: "",
+    specials: "",
+    members: "",
+    portfolio: "",
+    testimonials: "",
+    sponsors: "",
+    events: "",
+    faqs: "",
+    news: "",
+    library: "",
+    projects: "",
+    advancedFilters: "",
+    search: "",
+    careers: "",
   }
 
   const radioSwitch = (e) => {
