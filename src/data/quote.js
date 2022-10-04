@@ -3,7 +3,7 @@ export default {
     website: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     eCommerce: {
       title: "",
@@ -18,7 +18,7 @@ export default {
     giftCards: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     tickets: {
       title: "",
@@ -41,17 +41,17 @@ export default {
     template: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     customBasic: {
       title: "",
       info: "",
-      price: 200,
+      price: 750,
     },
     customAdvanced: {
       title: "",
       info: "",
-      price: 200,
+      price: 1500,
     },
   },
   pages: {
