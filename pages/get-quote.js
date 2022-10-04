@@ -14,7 +14,32 @@ const GetQuote = (props) => {
 	const [selections, setSelections] = useState({})
 	const [position, setPosition] = useState(0)
 	const [definition, setDefinition] = useState("")
-	const [linePrices, setLinePrices] = useState([])
+	const [lineItems, setLineItems] = useState({
+		webType: {
+			text: "Website Type",
+			total: 0
+		},
+		design: {
+			text: "Design",
+			total: 0
+		},
+		programming: {
+			text: "Programming",
+			total: 0
+		},
+		pages: {
+			text: "Advanced Pages",
+			total: 0
+		},
+		content: {
+			text: "Additional Content",
+			total: 0
+		},
+		contact: {
+			text: "Get Itemized Quote",
+			total: false
+		},
+	})
 	const [totalPrice, setTotalPrice] = useState(0)
 	const [contactInfo, setContactInfo] = useState({
 		name: "",
@@ -22,13 +47,6 @@ const GetQuote = (props) => {
 		phone: "",
 		message: ""
 	})
-	const titles = [
-		"Website Type",
-		"Design",
-		"Additional Content",
-		"Advanced Pages",
-		"Programming",
-	]
 
 	const [formattedInfo, setFormattedInfo] = useState({})
 	const form = useRef(false)
@@ -64,22 +82,29 @@ const GetQuote = (props) => {
 	}
 
 	const updatePrice = () => {
-		const n = Object.entries(selections).forEach(([section, el]) => {
+		const n = { ...lineItems }
+		Object.entries(selections).forEach(([section, el]) => {
 			const val = Object
 				.entries(quoteData[section])
-				.filter(([key, val]) => selections[section][key] === true)
+				.filter(([key, _]) => selections[section][key] === true)
 				.map(([_, val]) => val.price)
-			return val.length > 0 ? val.reduce((a, b) => a + b) : 0
+			n[section].total = val.length > 0 ? val.reduce((a, b) => a + b) : 0
 		})
-		setLinePrices(n)
-		setTotalPrice(Object.values(n).reduce((a, b) => a + b))
+
+		setLineItems(n)
+		setTotalPrice(
+			Object.values(n)
+				.filter((a) => a.total !== false)
+				.map((a) => a.total)
+				.reduce((a, b) => a + b)
+		)
 	}
 
 	const updateInfo = () => {
 		let items = {
 			contactInfo,
 			pricing: {
-				...linePrices,
+				...lineItems,
 				totalPrice
 			}
 		}
@@ -114,18 +139,20 @@ const GetQuote = (props) => {
 		<ContactForm currentValues={contactInfo} onChange={updateContactInfo} />,
 	]
 
+	const items = Object.entries(lineItems).map(([_, val]) => val)
+
 	return (
 		<div id="quote-section">
 			<h4>Step {position + 1} of {forms.length}</h4>
 			<PositionHolder total={forms.length} position={position} setPosition={changePosition} />
 			<div className="card">
 				<div id="quote-builder">
-					<h2>{titles[position]}</h2>
+					<h2>{items[position].text}</h2>
 					<form ref={form} name="quote" action="/success" method="POST" data-netlify="true">
 						<input type="hidden" name="quote" value="quote" />
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
-						<textarea className="hidden" name="Json Info" value={JSON.stringify({ contactInfo, selections, linePrices, totalPrice })} />
+						<textarea className="hidden" name="Json Info" value={JSON.stringify({ contactInfo, selections, lineItems, totalPrice })} />
 						<div className="definition">
 							{definition}
 						</div>
@@ -138,7 +165,7 @@ const GetQuote = (props) => {
 						</div>
 					</form>
 				</div>
-				<PriceBox linePrices={linePrices} total={totalPrice} />
+				<PriceBox lineItems={items} total={totalPrice} />
 			</div>
 		</div>
 	);

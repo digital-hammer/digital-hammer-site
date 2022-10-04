@@ -6,7 +6,7 @@ export default {
     },
     eCommerce: {
       info: "Our eCommerce websites are build with shopify.",
-      price: 0,
+      price: 500,
     },
     products: {
       info: "",
