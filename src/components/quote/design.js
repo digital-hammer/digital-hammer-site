@@ -43,7 +43,6 @@ export default (props) => {
   }
   return (
     <div id="design">
-      <h2>Design</h2>
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
         {Object.entries(design).map(([key, val]) => createInput(key, val, design, "radio"))}

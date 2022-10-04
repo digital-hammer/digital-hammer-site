@@ -103,17 +103,17 @@ export default {
     },
   },
   content: {
-    selfCopy: {
+    copySelf: {
       info: "",
       price: 0,
     },
-    customBasic: {
+    copyBasic: {
       info: "",
-      price: 1000,
+      price: 500,
     },
     copyAdvanced: {
       info: "",
-      price: 100,
+      price: 1000,
     },
     photoYes: {
       info: "",

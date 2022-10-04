@@ -43,7 +43,6 @@ export default (props) => {
   }
   return (
     <div id="web-type">
-      <h2>Website Type</h2>
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
         {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}

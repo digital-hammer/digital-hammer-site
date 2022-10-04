@@ -37,7 +37,6 @@ export default (props) => {
   }
   return (
     <div id="pages">
-      <h2>Pages</h2>
       <h3>Are you looking for any of the following pages?</h3>
       {Object.entries(pages).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
     </div>

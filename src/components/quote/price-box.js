@@ -2,17 +2,12 @@
 export default (props)=> {
 	const {
 		linePrices = {},
+		titles = {},
 		total = 0
 	} = props || {}
-	const titles = {
-		webType: "Website Type",
-		pages: "Advanced Pages",
-		content: "Copywrite",
-		programming: "Additional Programming",
-	}
 	return (
 		<div id="price-box">
-			{Object.entries(linePrices).map(([text, total])=> {
+			{linePrices.map(({text, total})=> {
 				return total.toFixed(0) > 0 && (
 					<h5 key={text}>
 							{titles[text] || text}: <span>$ {total}</span>

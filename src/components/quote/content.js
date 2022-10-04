@@ -36,7 +36,6 @@ export default (props) => {
   }
   return (
     <div id="content">
-      <h2>Additional Content</h2>
       <h3>How will you create the copy (text) for your website?</h3>
       <div className="switches">
         {Object.entries(content).map(([key, val]) => createInput(key, val, content, "radio"))}
