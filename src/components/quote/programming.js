@@ -19,7 +19,9 @@ export default (props) => {
     timeline: "Timeline",
     affiliatesSlider: "Affiliates Slider",
     shareButtons: "Social Media Share Buttons",
-    quoteBuilder: "Quote Builder"
+    quoteBuilder: "Quote Builder",
+    advancedFilters: "Advanced Filters",
+    search: "Search Bar",
   }
 
   const radioChange = (e, fullUpdate = true) => {

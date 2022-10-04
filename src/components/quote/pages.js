@@ -5,16 +5,20 @@ export default (props) => {
   } = props
 
   const pages = {
-    products: "Products/Services",
-    giftCards: "Gift Cards",
-    tickets: "Event Tickets",
-    donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
-  }
-
-  const radioSwitch = (e) => {
-    Object.entries({ ...radioButtons, ...productTypes }).forEach(([key, _]) => onChange('pages', key, false, false))
-    onChange('pages', e.target.value, true)
+    blog: "Blog",
+    specials: "Specials",
+    members: "Staff/Board Members",
+    portfolio: "Portfolio",
+    testimonials: "testimonials",
+    sponsors: "sponsors",
+    events: "events",
+    faqs: "FAQs",
+    news: "news",
+    library: "library",
+    projects: "projects",
+    advancedFilters: "Advanced Filters",
+    search: "Search Bar",
+    careers: "",
   }
 
   const radioChange = (e, fullUpdate = true) => {
@@ -23,7 +27,7 @@ export default (props) => {
   }
   const createInput = (key, text, onChange, type) => {
     return (
-      <>
+      <div>
         <input
           id={key}
           type={type}
@@ -32,13 +36,15 @@ export default (props) => {
           onChange={onChange}
         />
         <label htmlFor={key}>{text}</label>
-      </>
+      </div>
     )
   }
   return (
     <div id="pages">
       <h3>Are you looking for any of the following pages?</h3>
-      {Object.entries(pages).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
+      <div className="grid">
+        {Object.entries(pages).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
+      </div>
     </div>
   )
 }

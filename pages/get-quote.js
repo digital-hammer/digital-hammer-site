@@ -13,7 +13,7 @@ const GetQuote = (props) => {
 
 	const [selections, setSelections] = useState({})
 	const [position, setPosition] = useState(0)
-	const [definition, setDefinition] = useState("")
+	const [definition, setDefinition] = useState(false)
 	const [lineItems, setLineItems] = useState({
 		webType: {
 			text: "Website Type",
@@ -61,7 +61,7 @@ const GetQuote = (props) => {
 
 	const changePosition = (p) => {
 		setPosition(p)
-		setDefinition("");
+		setDefinition(false);
 		updateInfo()
 	}
 
@@ -77,13 +77,13 @@ const GetQuote = (props) => {
 		setSelections(selections)
 		if (fullUpdate) {
 			updatePrice()
-			setDefinition(quoteData[section][key].info)
+			setDefinition(quoteData[section][key])
 		}
 	}
 
 	const updatePrice = () => {
 		const n = { ...lineItems }
-		Object.entries(selections).forEach(([section, el]) => {
+		Object.entries(selections).forEach(([section, _]) => {
 			const val = Object
 				.entries(quoteData[section])
 				.filter(([key, _]) => selections[section][key] === true)
@@ -153,9 +153,16 @@ const GetQuote = (props) => {
 						{forms[position]}
 						<textarea className="hidden" name="Info" value={formattedInfo} />
 						<textarea className="hidden" name="Json Info" value={JSON.stringify({ contactInfo, selections, lineItems, totalPrice })} />
-						<div className="definition">
-							{definition}
-						</div>
+						{definition && (
+							<div className="definition">
+								<h4>
+									{definition.title}
+								</h4>
+								<h4>
+									{definition.info}
+								</h4>
+							</div>
+						)}
 						<div className="position-buttons">
 							{position > 0 && <input type="button" onClick={prev} value="Previous" />}
 							{position !== forms.length - 1
