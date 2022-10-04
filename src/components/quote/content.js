@@ -4,56 +4,46 @@ export default (props) => {
     onChange
   } = props
 
-  const radioButtons = {
-    website: "Website",
-    eCommerce: "eCommerce",
+  const content = {
+    copySelf: "Myself",
+    copyBasic: "Basic Package",
+    copyAdvanced: "Advanced Package",
   }
 
-  const productTypes = {
-    products: "Products/Services",
-    giftCards: "Gift Cards",
-    tickets: "Event Tickets",
-    donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
+  const photography = {
+    photoNo: "No",
+    photoYes: "Yes",
   }
 
-  const radioSwitch = (e) => {
-    Object.entries({...radioButtons, ...productTypes}).forEach(([key, _])=> onChange('webType', key, false, false))
-    onChange('webType', e.target.value, true)
+  const radioSwitch = (e, reset) => {
+    reset && Object.entries(reset).forEach(([key, _]) => onChange('content', key, false, false))
+    onChange('content', e.target.value, true)
   }
 
-  const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
-    onChange('webType', value, checked, fullUpdate)
-  }
-  const createInput = (key, text, onChange, type) => {
+  const createInput = (key, text, el, type) => {
     return (
-      <>
+      <div>
         <input
           id={key}
           type={type}
           value={key}
           checked={currentValues[key]}
-          onChange={onChange}
+          onChange={(e)=> radioSwitch(e, el)}
         />
         <label htmlFor={key}>{text}</label>
-      </>
+      </div>
     )
   }
   return (
-    <div id="web-type">
-      <h3>What type of website are you looking for?</h3>
+    <div id="content">
+      <h3>How will you create the copy (text) for your website?</h3>
       <div className="switches">
-      {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
-
+        {Object.entries(content).map(([key, val]) => createInput(key, val, content, "radio"))}
       </div>
-      {currentValues.eCommerce && (
-        <div className="eCommerce-services">
-          <h3>What types of products would you be selling?</h3>
-          {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-        </div>
-      )}
-
+      <h3>Do you need any professional photography?</h3>
+      <div className="switches">
+        {Object.entries(photography).map(([key, val]) => createInput(key, val, photography, "radio"))}
+      </div>
     </div>
   )
 }

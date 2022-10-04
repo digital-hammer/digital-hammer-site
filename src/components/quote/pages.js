@@ -4,12 +4,7 @@ export default (props) => {
     onChange
   } = props
 
-  const radioButtons = {
-    website: "Website",
-    eCommerce: "eCommerce",
-  }
-
-  const productTypes = {
+  const pages = {
     products: "Products/Services",
     giftCards: "Gift Cards",
     tickets: "Event Tickets",
@@ -18,13 +13,13 @@ export default (props) => {
   }
 
   const radioSwitch = (e) => {
-    Object.entries({...radioButtons, ...productTypes}).forEach(([key, _])=> onChange('webType', key, false, false))
-    onChange('webType', e.target.value, true)
+    Object.entries({ ...radioButtons, ...productTypes }).forEach(([key, _]) => onChange('pages', key, false, false))
+    onChange('pages', e.target.value, true)
   }
 
   const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
-    onChange('webType', value, checked, fullUpdate)
+    const { value, checked } = e.target
+    onChange('pages', value, checked, fullUpdate)
   }
   const createInput = (key, text, onChange, type) => {
     return (
@@ -41,19 +36,9 @@ export default (props) => {
     )
   }
   return (
-    <div id="web-type">
-      <h3>What type of website are you looking for?</h3>
-      <div className="switches">
-      {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
-
-      </div>
-      {currentValues.eCommerce && (
-        <div className="eCommerce-services">
-          <h3>What types of products would you be selling?</h3>
-          {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-        </div>
-      )}
-
+    <div id="pages">
+      <h3>Are you looking for any of the following pages?</h3>
+      {Object.entries(pages).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
     </div>
   )
 }

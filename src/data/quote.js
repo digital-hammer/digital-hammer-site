@@ -6,7 +6,7 @@ export default {
     },
     eCommerce: {
       info: "Our eCommerce websites are build with shopify.",
-      price: 0,
+      price: 500,
     },
     products: {
       info: "",
@@ -35,11 +35,11 @@ export default {
       info: "",
       price: 200,
     },
-    basicCustom: {
+    customBasic: {
       info: "",
       price: 200,
     },  
-    advancedCustom: {
+    customAdvanced: {
       info: "",
       price: 200,
     },  
@@ -103,25 +103,25 @@ export default {
     },
   },
   content: {
-    customCopy: {
+    copySelf: {
+      info: "",
+      price: 0,
+    },
+    copyBasic: {
+      info: "",
+      price: 500,
+    },
+    copyAdvanced: {
       info: "",
       price: 1000,
     },
-    selfCopy: {
-      info: "",
-      price: 0,
-    },
-    hybridCopy: {
-      info: "",
-      price: 0,
-    },
-    hybridNumber: {
-      info: "",
-      price: 100,
-    },
-    photography: {
+    photoYes: {
       info: "",
       price: 700,
+    },
+    photoNo: {
+      info: "",
+      price: 0,
     },
   },
   programming: {
@@ -157,10 +157,6 @@ export default {
       info: "",
       price: 200,
     },
-    autoSend: {
-      info: "",
-      price: 200,
-    },
     contactForm: {
       info: "",
       price: 200,
@@ -178,14 +174,6 @@ export default {
       price: 200,
     },
     shareButtons: {
-      info: "",
-      price: 200,
-    },
-    giftCards: {
-      info: "",
-      price: 200,
-    },
-    tickets: {
       info: "",
       price: 200,
     },

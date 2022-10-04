@@ -18,12 +18,12 @@ export default (props) => {
   }
 
   const radioSwitch = (e) => {
-    Object.entries({...radioButtons, ...productTypes}).forEach(([key, _])=> onChange('webType', key, false, false))
+    Object.entries({ ...radioButtons, ...productTypes }).forEach(([key, _]) => onChange('webType', key, false, false))
     onChange('webType', e.target.value, true)
   }
 
   const radioChange = (e, fullUpdate = true) => {
-    const {value, checked} = e.target
+    const { value, checked } = e.target
     onChange('webType', value, checked, fullUpdate)
   }
 
@@ -45,8 +45,7 @@ export default (props) => {
     <div id="web-type">
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
-      {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
-
+        {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
       </div>
       {currentValues.eCommerce && (
         <div className="eCommerce-services">
