@@ -47,7 +47,7 @@ export default (props) => {
   }
   return (
     <div id="programming">
-      <h3>What type of website are you looking for?</h3>
+      <h3>Do you need any of these other more advanced items?</h3>
       <div className="grid">
         {Object.entries(programming).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
       </div>
