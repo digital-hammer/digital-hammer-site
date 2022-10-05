@@ -34,7 +34,7 @@ export default () => {
       text: 'Contact'
     },
     {
-      url: '/coming-soon',
+      url: '/quote-builder',
       text: 'Get Quote'
     },
   ]
