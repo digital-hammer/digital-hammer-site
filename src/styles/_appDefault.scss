@@ -4609,9 +4609,13 @@ label.switch {
 }
 
 #quote-builder {
+
+	h3 {
+		margin-top: 1.5em;
+	}
+
 	.switches {
 		display: flex;
-		margin-bottom: 36px;
 		overflow: hidden;
 
 		input {
@@ -4662,11 +4666,6 @@ label.switch {
 			box-shadow: none;
 		}
 	}
-}
-
-.eCommerce-services {
-	display: flex;
-	flex-direction: column;
 }
 
 .hidden {

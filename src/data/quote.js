@@ -3,7 +3,7 @@ export default {
     website: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     eCommerce: {
       title: "",
@@ -18,7 +18,7 @@ export default {
     giftCards: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     tickets: {
       title: "",
@@ -30,28 +30,39 @@ export default {
       info: "",
       price: 200,
     },
-    payments: {
+    invoicePayments: {
       title: "",
       info: "",
       price: 200,
     },
+    cartYes: {
+      title: "",
+      info: "",
+      price: 250,
+    },
+    cartNo: {
+      title: "",
+      info: "",
+      price: 0,
+    },
+    
 
   },
   design: {
     template: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     customBasic: {
       title: "",
       info: "",
-      price: 200,
+      price: 750,
     },
     customAdvanced: {
       title: "",
       info: "",
-      price: 200,
+      price: 1500,
     },
   },
   pages: {
@@ -88,27 +99,27 @@ export default {
     events: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     faqs: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     news: {
       title: "",
       info: "",
-      price: 200,
+      price: 150,
     },
     library: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     projects: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     careers: {
       title: "",
@@ -147,22 +158,22 @@ export default {
     gallery: {
       title: "",
       info: "",
-      price: 200,
+      price: 150,
     },
     videos: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     slideshow: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     employmentApplication: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     ads: {
       title: "",
@@ -174,20 +185,30 @@ export default {
       info: "",
       price: 200,
     },
-    memberLogin: {
+    basicLogin: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
-    signUp: {
+    advancedLogin: {
       title: "",
       info: "",
-      price: 200,
+      price: 750,
+    },
+    userCreation: {
+      title: "",
+      info: "",
+      price: 250,
+    },
+    subscribeSignUp: {
+      title: "",
+      info: "",
+      price: 250,
     },
     contactForm: {
       title: "",
       info: "",
-      price: 200,
+      price: 50,
     },
     mediaFeed: {
       title: "",
@@ -197,12 +218,12 @@ export default {
     timeline: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     affiliatesSlider: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     shareButtons: {
       title: "",
@@ -212,17 +233,22 @@ export default {
     quoteBuilder: {
       title: "",
       info: "",
-      price: 500,
+      price: 800,
     },
     advancedFilters: {
       title: "",
       info: "",
-      price: 200,
+      price: 150,
     },
-    search: {
+    basicSearch: {
       title: "",
       info: "",
-      price: 200,
+      price: 300,
+    },
+    advancedSearch: {
+      title: "",
+      info: "",
+      price: 1000,
     },
   },
 }

@@ -4,7 +4,7 @@ export default (props) => {
     onChange
   } = props
 
-  const radioButtons = {
+  const websiteType = {
     website: "Website",
     eCommerce: "eCommerce",
   }
@@ -14,11 +14,16 @@ export default (props) => {
     giftCards: "Gift Cards",
     tickets: "Event Tickets",
     donations: "Accepting Donations",
-    payments: "Accept Invoice Payments",
+    invoicePayments: "Accept Invoice Payments",
   }
 
-  const radioSwitch = (e) => {
-    Object.entries({ ...radioButtons, ...productTypes }).forEach(([key, _]) => onChange('webType', key, false, false))
+  const cart = {
+    cartNo: "No",
+    cartYes: "Yes",
+  }
+
+  const radioSwitch = (e, reset) => {
+    Object.entries(reset).forEach(([key, _]) => onChange('webType', key, false, false))
     onChange('webType', e.target.value, true)
   }
 
@@ -29,7 +34,7 @@ export default (props) => {
 
   const createInput = (key, text, onChange, type) => {
     return (
-      <>
+      <div>
         <input
           id={key}
           type={type}
@@ -38,20 +43,26 @@ export default (props) => {
           onChange={onChange}
         />
         <label htmlFor={key}>{text}</label>
-      </>
+      </div>
     )
   }
   return (
     <div id="web-type">
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
-        {Object.entries(radioButtons).map(([key, val]) => createInput(key, val, radioSwitch, "radio"))}
+        {Object.entries(websiteType).map(([key, val]) => createInput(key, val, (e)=> radioSwitch(e, {...websiteType, ...productTypes, ...cart}), "radio"))}
       </div>
       {currentValues.eCommerce && (
-        <div className="eCommerce-services">
-          <h3>What types of products would you be selling?</h3>
-          {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-        </div>
+        <>
+          <h3>What types of services will this eCommerce site offer?</h3>
+          <div className="grid">
+            {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
+          </div>
+          <h3>Will you need a cart for your site?</h3>
+          <div className="switches">
+            {Object.entries(cart).map(([key, val]) => createInput(key, val, (e)=> radioSwitch(e, cart), "radio"))}
+          </div>
+        </>
       )}
     </div>
   )

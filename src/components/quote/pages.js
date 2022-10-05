@@ -16,9 +16,7 @@ export default (props) => {
     news: "news",
     library: "library",
     projects: "projects",
-    advancedFilters: "Advanced Filters",
-    search: "Search Bar",
-    careers: "",
+    careers: "Careers",
   }
 
   const radioChange = (e, fullUpdate = true) => {

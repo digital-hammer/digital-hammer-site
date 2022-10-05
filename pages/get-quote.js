@@ -23,16 +23,16 @@ const GetQuote = (props) => {
 			text: "Design",
 			total: 0
 		},
-		programming: {
-			text: "Programming",
+		content: {
+			text: "Additional Content",
 			total: 0
 		},
 		pages: {
 			text: "Advanced Pages",
 			total: 0
 		},
-		content: {
-			text: "Additional Content",
+		programming: {
+			text: "Programming",
 			total: 0
 		},
 		contact: {
@@ -158,9 +158,9 @@ const GetQuote = (props) => {
 								<h4>
 									{definition.title}
 								</h4>
-								<h4>
+								<p>
 									{definition.info}
-								</h4>
+								</p>
 							</div>
 						)}
 						<div className="position-buttons">
