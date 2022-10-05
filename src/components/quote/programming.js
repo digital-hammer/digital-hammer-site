@@ -12,16 +12,19 @@ export default (props) => {
     employmentApplication: "Online Employement Application",
     ads: "Ads Display",
     locations: "Map with single or multiple locations",
-    memberLogin: "Members Login",
-    signUp: "Sign Up Form",
+    basicLogin: "Basic Login",
+    advancedLogin: "Advanced Login",
+    subscriptionSignUp: "Subscribe/Sign Up Form",
+    userCreation: "User Sign Up/Profile Creation",
     contactForm: "Contace Form",
     mediaFeed: "Social Media Feed",
     timeline: "Timeline",
     affiliatesSlider: "Affiliates Slider",
     shareButtons: "Social Media Share Buttons",
     quoteBuilder: "Quote Builder",
-    advancedFilters: "Advanced Filters",
-    search: "Search Bar",
+    advancedFilters: "Project and Image Filters",
+    basicSearch: "Basic Search (No Filters)",
+    advancedSearch: "Advanced Search (With Filters)",
   }
 
   const radioChange = (e, fullUpdate = true) => {
