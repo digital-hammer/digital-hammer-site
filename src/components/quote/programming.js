@@ -36,6 +36,7 @@ export default (props) => {
     return (
       <div>
         <input
+          key={key}
           id={key}
           type={type}
           value={key}

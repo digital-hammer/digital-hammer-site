@@ -3635,10 +3635,6 @@ body.is-preload #banner footer {
 		margin-bottom: 0;
 		padding: 4em 3.5em;
 	}
-}
-
-#contact-us,
-#quote-builder {
 
 	form input,
 	form select,
@@ -3955,7 +3951,7 @@ form>.fields>.field.quarter {
 
 @media screen and (max-width: 980px) {
 
-	#contact-us, #quote-builder {
+	#contact-us {
 		form>.fields {
 			width: calc(100% + 3em);
 			margin: -1.5em 0 2em -1.5em;
@@ -4467,10 +4463,21 @@ label.switch {
 			.position-buttons {
 				display: flex;
 				justify-content: end;
-
 				button,
 				input[type="button"] {
 					margin-left: 1em;
+				}
+			}
+
+			#contact {
+				label {
+					display: none;
+				}
+				input,
+				select,
+				textarea {
+					color: $grey-light;
+					background-color: rgba(0, 0, 0, 0.065)
 				}
 			}
 		}
