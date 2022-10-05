@@ -6,7 +6,7 @@ export default (props) => {
     content = ["Check out our online quote builder get a free quote for your website in just minutes.", "Click the button below to get started."],
     action = {
       text: "Get Quote",
-      href: "/quote-builder"
+      href: "/get-quote"
     }
   } = props || {}
   return (
