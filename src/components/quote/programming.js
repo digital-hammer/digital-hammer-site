@@ -12,6 +12,7 @@ export default (props) => {
     employmentApplication: "Online Employement Application",
     ads: "Ads Display",
     locations: "Map with single or multiple locations",
+    testimonials: "Testimonials Section",
     basicLogin: "Basic Login",
     advancedLogin: "Advanced Login",
     subscriptionSignUp: "Subscribe/Sign Up Form",
@@ -19,7 +20,7 @@ export default (props) => {
     contactForm: "Contace Form",
     mediaFeed: "Social Media Feed",
     timeline: "Timeline",
-    affiliatesSlider: "Affiliates Slider",
+    affiliateSlider: "Affiliates Slider",
     shareButtons: "Social Media Share Buttons",
     quoteBuilder: "Quote Builder",
     advancedFilters: "Project and Image Filters",
@@ -35,6 +36,7 @@ export default (props) => {
     return (
       <div>
         <input
+          key={key}
           id={key}
           type={type}
           value={key}

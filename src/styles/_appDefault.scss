@@ -4463,10 +4463,21 @@ label.switch {
 			.position-buttons {
 				display: flex;
 				justify-content: end;
-
 				button,
 				input[type="button"] {
 					margin-left: 1em;
+				}
+			}
+
+			#contact {
+				label {
+					display: none;
+				}
+				input,
+				select,
+				textarea {
+					color: $grey-light;
+					background-color: rgba(0, 0, 0, 0.065)
 				}
 			}
 		}

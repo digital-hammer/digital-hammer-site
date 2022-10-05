@@ -13,7 +13,7 @@ export default {
     products: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     giftCards: {
       title: "",
@@ -23,17 +23,22 @@ export default {
     tickets: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     donations: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     invoicePayments: {
       title: "",
       info: "",
       price: 200,
+    },
+    other: {
+      title: "",
+      info: "",
+      price: 0,
     },
     cartYes: {
       title: "",
@@ -45,8 +50,6 @@ export default {
       info: "",
       price: 0,
     },
-    
-
   },
   design: {
     template: {
@@ -69,12 +72,12 @@ export default {
     blog: {
       title: "",
       info: "",
-      price: 200,
+      price: 250,
     },
     specials: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     members: {
       title: "",
@@ -84,22 +87,22 @@ export default {
     portfolio: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     testimonials: {
       title: "",
       info: "",
-      price: 50,
+      price: 150,
     },
     sponsors: {
       title: "",
       info: "",
-      price: 50,
+      price: 150,
     },
     events: {
       title: "",
       info: "",
-      price: 100,
+      price: 200,
     },
     faqs: {
       title: "",
@@ -109,7 +112,7 @@ export default {
     news: {
       title: "",
       info: "",
-      price: 150,
+      price: 200,
     },
     library: {
       title: "",
@@ -183,7 +186,7 @@ export default {
     locations: {
       title: "",
       info: "",
-      price: 200,
+      price: 100,
     },
     basicLogin: {
       title: "",
@@ -208,7 +211,7 @@ export default {
     contactForm: {
       title: "",
       info: "",
-      price: 50,
+      price: 100,
     },
     mediaFeed: {
       title: "",
@@ -220,7 +223,7 @@ export default {
       info: "",
       price: 250,
     },
-    affiliatesSlider: {
+    affiliateSlider: {
       title: "",
       info: "",
       price: 100,
@@ -238,17 +241,22 @@ export default {
     advancedFilters: {
       title: "",
       info: "",
-      price: 150,
+      price: 200,
     },
     basicSearch: {
       title: "",
       info: "",
-      price: 300,
+      price: 500,
     },
     advancedSearch: {
       title: "",
       info: "",
       price: 1000,
+    },
+    testimonials: {
+      title: "",
+      info: "",
+      price: 50,
     },
   },
 }

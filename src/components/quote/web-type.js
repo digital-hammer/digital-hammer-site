@@ -15,6 +15,7 @@ export default (props) => {
     tickets: "Event Tickets",
     donations: "Accepting Donations",
     invoicePayments: "Accept Invoice Payments",
+    other: "Other",
   }
 
   const cart = {
@@ -36,6 +37,7 @@ export default (props) => {
     return (
       <div>
         <input
+          key={key}
           id={key}
           type={type}
           value={key}
@@ -50,17 +52,17 @@ export default (props) => {
     <div id="web-type">
       <h3>What type of website are you looking for?</h3>
       <div className="switches">
-        {Object.entries(websiteType).map(([key, val]) => createInput(key, val, (e)=> radioSwitch(e, {...websiteType, ...productTypes, ...cart}), "radio"))}
+        {Object.entries(websiteType).map(([key, val]) => createInput(key, val, (e)=> radioSwitch(e, { ...websiteType, ...productTypes, ...cart }), "radio"))}
       </div>
       {currentValues.eCommerce && (
         <>
+          <h3>Will you need a cart for your site?</h3>
+          <div className="switches">
+            {Object.entries(cart).map(([key, val]) => createInput(key, val, (e) => radioSwitch(e, cart), "radio"))}
+          </div>
           <h3>What types of services will this eCommerce site offer?</h3>
           <div className="grid">
             {Object.entries(productTypes).map(([key, val]) => createInput(key, val, radioChange, "checkbox"))}
-          </div>
-          <h3>Will you need a cart for your site?</h3>
-          <div className="switches">
-            {Object.entries(cart).map(([key, val]) => createInput(key, val, (e)=> radioSwitch(e, cart), "radio"))}
           </div>
         </>
       )}

@@ -9,13 +9,13 @@ export default (props) => {
     specials: "Specials",
     members: "Staff/Board Members",
     portfolio: "Portfolio",
-    testimonials: "testimonials",
-    sponsors: "sponsors",
-    events: "events",
+    testimonials: "Testimonials",
+    sponsors: "Sponsors",
+    events: "Events",
     faqs: "FAQs",
-    news: "news",
-    library: "library",
-    projects: "projects",
+    news: "News",
+    library: "Library",
+    projects: "Projects",
     careers: "Careers",
   }
 
@@ -27,6 +27,7 @@ export default (props) => {
     return (
       <div>
         <input
+          key={key}
           id={key}
           type={type}
           value={key}

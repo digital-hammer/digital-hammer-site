@@ -24,11 +24,12 @@ export default (props) => {
     return (
       <div>
         <input
+          key={key}
           id={key}
           type={type}
           value={key}
           checked={currentValues[key]}
-          onChange={(e)=> radioSwitch(e, el)}
+          onChange={(e) => radioSwitch(e, el)}
         />
         <label htmlFor={key}>{text}</label>
       </div>
