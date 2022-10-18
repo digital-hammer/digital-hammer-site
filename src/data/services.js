@@ -23,7 +23,7 @@ export default {
     icon: faShield,
     image: "/images/undraw/security.svg",
     title: "Free SSL Certificate",
-    body: "A key part to a good SEO rating. Search engines like Google often require SSL to encrypt data.",
+    body: "A key part of a good SEO rating. Search engines like Google often require SSL to encrypt data.",
     bodyFull: `SSL certificates are digital certificates that 
     authenticate a website's identity by enabling an encrypted 
     connection. SSL is the difference between http and https, 
@@ -35,7 +35,7 @@ export default {
     icon: faCommentsDollar,
     image: "/images/undraw/savings.svg",
     title: "Cost Efficient Sites",
-    body: "We offer the best pricing available for high quality, high speed, modern websites.",
+    body: "We offer the best pricing available for high-quality, high-speed, modern websites.",
     bodyFull: `If you are looking to build another type 
     of website we have a wide range of options at different 
     price ranges all being very competitive.`,
@@ -53,7 +53,7 @@ export default {
     icon: faStore,
     image: "/images/undraw/web_shopping.svg",
     title: "eCommerce With Shopify",
-    body: "The perfect solution to online retail. Get your shopify eCommerce site started today!",
+    body: "The perfect solution to online retail. Get your Shopify eCommerce site started today!",
     bodyFull: `Need a website for selling products or services? 
     Using Shopify, the most modern SaaS, we will create a 
     profit making website for your needs.`,
