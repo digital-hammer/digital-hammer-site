@@ -17,7 +17,7 @@ export default (props) => {
     advancedLogin: "Advanced Login",
     subscriptionSignUp: "Subscribe/Sign Up Form",
     userCreation: "User Sign Up/Profile Creation",
-    contactForm: "Contace Form",
+    contactForm: "Contact Form",
     mediaFeed: "Social Media Feed",
     timeline: "Timeline",
     affiliateSlider: "Affiliates Slider",
